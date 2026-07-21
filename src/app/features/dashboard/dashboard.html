@@ -1,0 +1,178 @@
+<!-- Contenedor principal: Fondo gris claro para toda la pantalla -->
+<div class="min-h-screen bg-archer-bg">
+  <!-- HEADER OSCURO -->
+  <!-- pb-32 (padding-bottom) es el truco: le da espacio extra abajo para que las tarjetas puedan "subir" y superponerse -->
+  <div class="bg-archer-blue pb-32">
+    <!-- Barra superior: Logo y Perfil -->
+    <nav class="border-b border-archer-lightBlue/30">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex h-16 items-center justify-between">
+          <div class="flex items-center">
+            <!-- Logo (Texto temporal) -->
+            <div class="flex-shrink-0 text-white font-bold text-xl flex items-center gap-2">
+              <div
+                class="w-8 h-8 bg-archer-green rounded-md flex items-center justify-center text-archer-blue"
+              >
+                A
+              </div>
+              Archer Control
+            </div>
+          </div>
+          <!-- Notificaciones y Perfil -->
+          <div class="flex items-center gap-4">
+            <button class="text-archer-lightBlue hover:text-white transition">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+                ></path>
+              </svg>
+            </button>
+            <div class="w-8 h-8 bg-archer-lightBlue rounded-full border-2 border-white"></div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Menú de Navegación Secundario (Las pestañas) -->
+    <header class="py-6">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <div class="flex gap-6 text-sm font-medium text-archer-lightBlue">
+          <a href="#" class="text-white bg-white/10 px-3 py-2 rounded-md">Dashboard</a>
+          <a href="#" class="hover:text-white px-3 py-2 transition">Servicios</a>
+          <a href="#" class="hover:text-white px-3 py-2 transition">Clientes</a>
+          <a href="#" class="hover:text-white px-3 py-2 transition">Unidades</a>
+        </div>
+        <!-- Buscador -->
+        <div class="relative">
+          <input
+            type="text"
+            placeholder="Buscar folio o placa..."
+            class="bg-white/10 border border-archer-lightBlue/30 text-white placeholder-archer-lightBlue rounded-md pl-10 pr-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-archer-green"
+          />
+          <svg
+            class="w-4 h-4 text-archer-lightBlue absolute left-3 top-3"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+            ></path>
+          </svg>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <!-- CONTENIDO PRINCIPAL SUPERPUESTO -->
+  <!-- -mt-24 (margin-top negativo) es la otra mitad del truco: "jala" este contenedor hacia arriba, por encima del header oscuro -->
+  <main class="-mt-24 pb-8">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <!-- Grid de 3 columnas: 2 para la tabla, 1 para los KPIs -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- CAJA GRANDE (Izquierda): Tabla de Servicios -->
+        <div
+          class="bg-white rounded-lg shadow-md lg:col-span-2 overflow-hidden border border-gray-100 min-h-[400px]"
+        >
+          <div class="p-6 border-b border-gray-100 flex justify-between items-center">
+            <h2 class="text-lg font-bold text-archer-blue">Servicios Recientes</h2>
+            <button class="text-sm text-archer-lightBlue hover:text-archer-blue font-medium">
+              Ver todos &rarr;
+            </button>
+          </div>
+
+          <table class="w-full text-left border-collapse">
+            <thead class="bg-gray-50 text-gray-500 text-xs uppercase font-semibold">
+              <tr>
+                <th class="px-6 py-3">Folio</th>
+                <th class="px-6 py-3">Cliente</th>
+                <th class="px-6 py-3">Ruta</th>
+                <th class="px-6 py-3">Estatus</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100 text-sm">
+              <tr class="hover:bg-gray-50 cursor-pointer transition">
+                <td class="px-6 py-4 font-bold text-archer-blue">SRV-1042</td>
+                <td class="px-6 py-4 font-medium text-gray-700">Cliente Industrial GDL</td>
+                <td class="px-6 py-4 text-gray-500">GDL &rarr; CDMX</td>
+                <td class="px-6 py-4">
+                  <span
+                    class="bg-blue-50 text-blue-700 border border-blue-200 px-2 py-1 rounded-md text-xs font-medium"
+                    >En tránsito</span
+                  >
+                </td>
+              </tr>
+              <tr class="hover:bg-gray-50 cursor-pointer transition">
+                <td class="px-6 py-4 font-bold text-archer-blue">SRV-1041</td>
+                <td class="px-6 py-4 font-medium text-gray-700">Comercial Bajío</td>
+                <td class="px-6 py-4 text-gray-500">GDL &rarr; León</td>
+                <td class="px-6 py-4">
+                  <span
+                    class="bg-green-50 text-green-700 border border-green-200 px-2 py-1 rounded-md text-xs font-medium"
+                    >Entregado</span
+                  >
+                </td>
+              </tr>
+              <tr class="hover:bg-gray-50 cursor-pointer transition">
+                <td class="px-6 py-4 font-bold text-archer-blue">SRV-1040</td>
+                <td class="px-6 py-4 font-medium text-gray-700">Distribuidora MX</td>
+                <td class="px-6 py-4 text-gray-500">GDL &rarr; Querétaro</td>
+                <td class="px-6 py-4">
+                  <span
+                    class="bg-gray-100 text-gray-700 border border-gray-200 px-2 py-1 rounded-md text-xs font-medium"
+                    >Por asignar</span
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- CAJA PEQUEÑA (Derecha): Resumen / KPIs -->
+        <div class="space-y-6 lg:col-span-1">
+          <!-- Tarjeta de Resumen -->
+          <div class="bg-white rounded-lg shadow-md border border-gray-100 p-6">
+            <h2 class="text-lg font-bold text-archer-blue mb-4">Resumen Operativo</h2>
+
+            <div class="space-y-4">
+              <div class="flex items-center justify-between border-b border-gray-100 pb-3">
+                <span class="text-gray-500 text-sm">Servicios en ruta hoy</span>
+                <span class="text-xl font-bold text-archer-blue">18</span>
+              </div>
+              <div class="flex items-center justify-between border-b border-gray-100 pb-3">
+                <span class="text-gray-500 text-sm">Viajes por asignar</span>
+                <span class="text-xl font-bold text-orange-500">5</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-gray-500 text-sm">Evidencias pendientes</span>
+                <span class="text-xl font-bold text-red-500">3</span>
+              </div>
+            </div>
+
+            <button
+              class="mt-6 w-full bg-archer-green hover:bg-opacity-90 text-white font-medium py-2 rounded-md transition shadow-sm"
+            >
+              + Nuevo Servicio
+            </button>
+          </div>
+
+          <!-- Mini tarjeta extra (Para rellenar el espacio visualmente) -->
+          <div
+            class="bg-archer-blue rounded-lg shadow-md border border-archer-lightBlue/30 p-6 text-white"
+          >
+            <h3 class="font-medium mb-1">Próxima llegada estimada</h3>
+            <p class="text-sm text-archer-lightBlue mb-3">SRV-1042 (Unidad UN-001)</p>
+            <div class="text-2xl font-bold text-archer-green">18:45 hrs</div>
+            <p class="text-xs text-archer-lightBlue mt-1">Destino: CDMX Sur</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

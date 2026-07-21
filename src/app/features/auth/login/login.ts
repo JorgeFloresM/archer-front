@@ -10,17 +10,18 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './login.css',
 })
 export class Login {
+  email = '';
+  password = '';
+
   constructor(private router: Router) {}
 
-  /* onLogin() {
+  onLogin() {
     console.log('Intentando login con:', this.email)
 
     if (this.email === 'admin@archerlogistica.com' && this.password === '12345678') {
-      console.log('Credenciales correctas, redirigiendo...')
-
-      alert('¡Bienvenido al sistema Archer Control!')
+      this.router.navigate(['/dashboard']);
     } else {
       alert('Usuario o contraseña incorrectos.')
     }
-  } */
+  }   
 }
