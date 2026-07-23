@@ -9,3 +9,10 @@ html, body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #F3F4F6;
 }
+
+@layer utilities {
+  .glass-card {
+    @apply bg-surface-container-lowest border border-outline-variant;
+  box-shadow: 0 4px 12px rgba(15, 37, 62, 0.08);
+  }
+}

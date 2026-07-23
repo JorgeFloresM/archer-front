@@ -96,6 +96,10 @@ export class ViajesService {
 
   constructor() { }
 
+  getTodosLosViajes(): Viaje[] {
+    return this.mockViajes;
+  }
+
   getViajePorFolio(folio: string): Viaje | undefined {
     return this.mockViajes.find(v => v.folio === folio);
   }
