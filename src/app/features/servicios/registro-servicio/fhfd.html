@@ -1,0 +1,328 @@
+<main class="flex-1 p-6 md:p-8 overflow-y-auto bg-background">
+  <!-- SOLUCIÓN AQUÍ: w-full asegura adaptabilidad, max-w-5xl lo hace más pequeño y compacto. SIN mx-auto para que se pegue a la izquierda -->
+  <div class="w-full max-w-6xl">
+    <div class="mb-6">
+      <h2 class="text-2xl font-semibold text-on-surface mb-1">Registro de Nuevo Servicio</h2>
+      <p class="font-body-sm text-sm text-on-surface-variant">
+        Ingrese los detalles para la nueva operación logística.
+      </p>
+    </div>
+
+    <!-- Form Container -->
+    <div class="glass-card rounded-xl overflow-hidden mb-8">
+      <!-- Stepper Header -->
+      <div class="flex border-b border-outline-variant bg-surface-container-low/50 overflow-x-auto">
+        <div
+          class="flex-1 px-6 py-4 flex items-center justify-center sm:justify-start gap-3 border-b-2 border-secondary relative min-w-[200px]"
+        >
+          <div
+            class="w-6 h-6 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-data-mono text-[10px] font-bold"
+          >
+            1
+          </div>
+          <span class="font-label-caps text-xs font-bold text-secondary uppercase tracking-wider"
+            >Cliente y Ruta</span
+          >
+        </div>
+        <div
+          class="flex-1 px-6 py-4 flex items-center justify-center sm:justify-start gap-3 opacity-50 relative min-w-[200px]"
+        >
+          <div
+            class="w-6 h-6 rounded-full bg-outline-variant text-surface flex items-center justify-center font-data-mono text-[10px] font-bold"
+          >
+            2
+          </div>
+          <span
+            class="font-label-caps text-xs font-bold text-on-surface-variant uppercase tracking-wider"
+            >Unidad y Carga</span
+          >
+          <div
+            class="absolute left-0 top-1/2 -translate-y-1/2 w-px h-8 bg-outline-variant hidden sm:block"
+          ></div>
+        </div>
+        <div
+          class="flex-1 px-6 py-4 flex items-center justify-center sm:justify-start gap-3 opacity-50 relative min-w-[200px]"
+        >
+          <div
+            class="w-6 h-6 rounded-full bg-outline-variant text-surface flex items-center justify-center font-data-mono text-[10px] font-bold"
+          >
+            3
+          </div>
+          <span
+            class="font-label-caps text-xs font-bold text-on-surface-variant uppercase tracking-wider"
+            >Revisión</span
+          >
+          <div
+            class="absolute left-0 top-1/2 -translate-y-1/2 w-px h-8 bg-outline-variant hidden sm:block"
+          ></div>
+        </div>
+      </div>
+
+      <form class="p-6 md:p-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          <!-- Left Column: Client & Dates -->
+          <div class="lg:col-span-4 space-y-6">
+            <div>
+              <label
+                class="block font-label-caps text-xs font-bold text-on-surface-variant mb-2 uppercase tracking-wider"
+                >Selección de Cliente *</label
+              >
+              <div class="relative">
+                <select
+                  class="w-full bg-surface border border-outline-variant rounded-lg px-3 py-2.5 font-body-sm text-sm text-on-surface appearance-none focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-colors cursor-pointer"
+                >
+                  <option disabled selected value="">Seleccionar Cliente...</option>
+                  <option value="1">Cliente Industrial GDL</option>
+                  <option value="2">Comercial Bajío</option>
+                  <option value="3">Distribuidora MX</option>
+                </select>
+                <span
+                  class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline pointer-events-none"
+                  >expand_more</span
+                >
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label
+                  class="block font-label-caps text-xs font-bold text-on-surface-variant mb-2 uppercase tracking-wider"
+                  >Fecha *</label
+                >
+                <div class="relative">
+                  <input
+                    class="w-full bg-surface border border-outline-variant rounded-lg px-3 py-2.5 font-body-sm text-sm text-on-surface focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-colors"
+                    type="date"
+                  />
+                </div>
+              </div>
+              <div>
+                <label
+                  class="block font-label-caps text-xs font-bold text-on-surface-variant mb-2 uppercase tracking-wider"
+                  >Entrega Est.</label
+                >
+                <div class="relative">
+                  <input
+                    class="w-full bg-surface border border-outline-variant rounded-lg px-3 py-2.5 font-body-sm text-sm text-on-surface focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-colors"
+                    type="date"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <label
+                class="block font-label-caps text-xs font-bold text-on-surface-variant mb-2 uppercase tracking-wider"
+                >Nivel de Prioridad</label
+              >
+              <div class="flex flex-col sm:flex-row flex-wrap gap-4 mt-2">
+                <label class="flex items-center gap-2 cursor-pointer group">
+                  <input
+                    checked
+                    class="w-4 h-4 text-secondary border-outline-variant focus:ring-secondary cursor-pointer"
+                    name="priority"
+                    type="radio"
+                    value="standard"
+                  />
+                  <span
+                    class="font-body-sm text-sm text-on-surface group-hover:text-secondary transition-colors"
+                    >Estándar</span
+                  >
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer group">
+                  <input
+                    class="w-4 h-4 text-secondary border-outline-variant focus:ring-secondary cursor-pointer"
+                    name="priority"
+                    type="radio"
+                    value="expedited"
+                  />
+                  <span
+                    class="font-body-sm text-sm text-on-surface group-hover:text-secondary transition-colors"
+                    >Urgente</span
+                  >
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer group">
+                  <input
+                    class="w-4 h-4 text-error border-outline-variant focus:ring-error cursor-pointer"
+                    name="priority"
+                    type="radio"
+                    value="critical"
+                  />
+                  <span
+                    class="font-body-sm text-sm text-on-surface group-hover:text-error transition-colors"
+                    >Crítico</span
+                  >
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Routing & Load -->
+          <div class="lg:col-span-8 space-y-6">
+            <div class="bg-surface-container-low p-5 rounded-lg border border-outline-variant">
+              <h3
+                class="font-title-sm text-lg font-semibold text-on-surface mb-4 flex items-center gap-2"
+              >
+                <span class="material-symbols-outlined text-secondary">route</span>
+                Detalles de Ruta
+              </h3>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 relative">
+                <!-- Visual connector for route -->
+                <div
+                  class="hidden md:block absolute left-1/2 top-[40px] bottom-[20px] w-px bg-outline-variant border-dashed border-l border-outline-variant -translate-x-1/2 z-0"
+                ></div>
+
+                <!-- Origin -->
+                <div
+                  class="relative z-10 bg-surface-container-lowest p-4 rounded-xl border border-outline-variant shadow-sm"
+                >
+                  <div class="flex items-center gap-2 mb-3">
+                    <div class="w-2.5 h-2.5 rounded-full bg-secondary"></div>
+                    <span
+                      class="font-label-caps text-xs font-bold text-on-surface-variant uppercase tracking-wider"
+                      >Origen</span
+                    >
+                  </div>
+                  <div class="space-y-3">
+                    <input
+                      class="w-full bg-surface border border-outline-variant rounded-lg px-3 py-2 font-body-sm text-sm text-on-surface focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-colors"
+                      placeholder="Instalación / Ubicación"
+                      type="text"
+                    />
+                    <input
+                      class="w-full bg-surface border border-outline-variant rounded-lg px-3 py-2 font-body-sm text-sm text-on-surface focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-colors"
+                      placeholder="Dirección completa"
+                      type="text"
+                    />
+                    <div class="grid grid-cols-3 gap-2">
+                      <input
+                        class="col-span-2 bg-surface border border-outline-variant rounded-lg px-3 py-2 font-body-sm text-sm text-on-surface focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-colors"
+                        placeholder="Ciudad / Estado"
+                        type="text"
+                      />
+                      <input
+                        class="bg-surface border border-outline-variant rounded-lg px-3 py-2 font-body-sm text-sm text-on-surface focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-colors font-data-mono"
+                        placeholder="C.P."
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Destination -->
+                <div
+                  class="relative z-10 bg-surface-container-lowest p-4 rounded-xl border border-outline-variant shadow-sm"
+                >
+                  <div class="flex items-center gap-2 mb-3">
+                    <div class="w-2.5 h-2.5 rounded-full bg-primary"></div>
+                    <span
+                      class="font-label-caps text-xs font-bold text-on-surface-variant uppercase tracking-wider"
+                      >Destino</span
+                    >
+                  </div>
+                  <div class="space-y-3">
+                    <input
+                      class="w-full bg-surface border border-outline-variant rounded-lg px-3 py-2 font-body-sm text-sm text-on-surface focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-colors"
+                      placeholder="Instalación / Ubicación"
+                      type="text"
+                    />
+                    <input
+                      class="w-full bg-surface border border-outline-variant rounded-lg px-3 py-2 font-body-sm text-sm text-on-surface focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-colors"
+                      placeholder="Dirección completa"
+                      type="text"
+                    />
+                    <div class="grid grid-cols-3 gap-2">
+                      <input
+                        class="col-span-2 bg-surface border border-outline-variant rounded-lg px-3 py-2 font-body-sm text-sm text-on-surface focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-colors"
+                        placeholder="Ciudad / Estado"
+                        type="text"
+                      />
+                      <input
+                        class="bg-surface border border-outline-variant rounded-lg px-3 py-2 font-body-sm text-sm text-on-surface focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-colors font-data-mono"
+                        placeholder="C.P."
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label
+                  class="block font-label-caps text-xs font-bold text-on-surface-variant mb-2 uppercase tracking-wider"
+                  >Tipo de Unidad *</label
+                >
+                <div class="relative">
+                  <select
+                    class="w-full bg-surface border border-outline-variant rounded-lg px-3 py-2.5 font-body-sm text-sm text-on-surface appearance-none focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-colors cursor-pointer"
+                  >
+                    <option disabled selected value="">Seleccionar Clase...</option>
+                    <option value="van">Camioneta 3.5t</option>
+                    <option value="box">Rabón / Torton</option>
+                    <option value="flatbed">Plataforma</option>
+                    <option value="dryvan">Caja Seca 53ft</option>
+                    <option value="reefer">Refrigerada 53ft</option>
+                  </select>
+                  <span
+                    class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline pointer-events-none"
+                    >expand_more</span
+                  >
+                </div>
+              </div>
+              <div>
+                <label
+                  class="block font-label-caps text-xs font-bold text-on-surface-variant mb-2 uppercase tracking-wider"
+                  >Peso de Carga (Ton)</label
+                >
+                <div class="relative">
+                  <input
+                    class="w-full bg-surface border border-outline-variant rounded-lg px-3 py-2.5 font-data-mono text-sm text-on-surface focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-colors pl-10"
+                    placeholder="0.0"
+                    type="number"
+                    step="0.1"
+                  />
+                  <span
+                    class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]"
+                    >scale</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <label
+                class="block font-label-caps text-xs font-bold text-on-surface-variant mb-2 uppercase tracking-wider"
+                >Carga y Observaciones</label
+              >
+              <textarea
+                class="w-full bg-surface border border-outline-variant rounded-lg px-3 py-2.5 font-body-sm text-sm text-on-surface focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-colors resize-none"
+                placeholder="Instrucciones de manejo, material peligroso..."
+                rows="2"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form Actions -->
+        <div class="mt-8 pt-5 border-t border-outline-variant flex justify-end gap-3">
+          <button
+            routerLink="/dashboard"
+            class="px-5 py-2.5 rounded-lg border border-outline-variant bg-surface hover:bg-surface-container-low transition-colors font-label-caps text-xs font-bold text-on-surface uppercase tracking-wider cursor-pointer"
+            type="button"
+          >
+            Cancelar
+          </button>
+          <button
+            class="px-6 py-2.5 rounded-lg bg-secondary hover:bg-opacity-90 transition-colors font-label-caps text-xs font-bold text-white uppercase tracking-wider shadow-sm cursor-pointer"
+            type="button"
+          >
+            Siguiente
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>

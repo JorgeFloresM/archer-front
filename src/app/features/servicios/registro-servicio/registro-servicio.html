@@ -2,7 +2,7 @@
 <nav
   class="w-[260px] h-screen fixed left-0 top-0 bg-primary border-r border-outline-variant flex flex-col py-6 z-50"
 >
-  <div class="px-6 mb-6 flex items-center gap-3">
+  <div class="px-6 mb-8 flex items-center gap-3">
     <div
       class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center shrink-0"
     >
@@ -19,7 +19,6 @@
       </p>
     </div>
   </div>
-
   <div class="flex-1 overflow-y-auto font-body-md text-sm">
     <a
       routerLink="/dashboard"
@@ -39,7 +38,7 @@
     </a>
 
     <a
-      href="#"
+      routerLink="/clientes"
       class="flex items-center gap-3 px-4 py-3 text-surface-variant hover:text-on-primary hover:bg-on-primary-fixed-variant/50 transition-all duration-200"
     >
       <span class="material-symbols-outlined text-[20px]">group</span>
@@ -47,7 +46,7 @@
     </a>
 
     <a
-      href="#"
+      routerLink="/transportistas"
       class="flex items-center gap-3 px-4 py-3 text-surface-variant hover:text-on-primary hover:bg-on-primary-fixed-variant/50 transition-all duration-200"
     >
       <span class="material-symbols-outlined text-[20px]">business_center</span>
@@ -55,7 +54,7 @@
     </a>
 
     <a
-      href="#"
+      routerLink="/asignacion"
       class="flex items-center gap-3 px-4 py-3 text-surface-variant hover:text-on-primary hover:bg-on-primary-fixed-variant/50 transition-all duration-200"
     >
       <span class="material-symbols-outlined text-[20px]">assignment_ind</span>
@@ -94,7 +93,6 @@
       <span>Finanzas</span>
     </a>
   </div>
-
   <!-- User Profile (Bottom) -->
   <div class="mt-auto px-4 w-full">
     <div
@@ -116,9 +114,11 @@
   </div>
 </nav>
 
-<!-- Main Content Area (Área Principal unificada) -->
-<div class="ml-[260px] flex-1 flex flex-col min-h-screen relative w-full bg-background">
-  <!-- TopAppBar (Barra Superior Unificada) -->
+<!-- Main Content Area (Área Principal) -->
+<div
+  class="ml-[260px] flex-1 flex flex-col h-screen relative w-full max-w-7xl overflow-hidden bg-background"
+>
+  <!-- TopAppBar (Barra Superior - CLON EXACTO DEL DASHBOARD) -->
   <header
     class="h-16 flex-shrink-0 sticky top-0 z-40 bg-surface border-b border-outline-variant flex items-center justify-between px-6 w-full font-label-caps text-xs text-primary"
   >
@@ -131,7 +131,7 @@
         >
         <input
           class="pl-10 pr-4 py-2 bg-surface-container rounded border border-outline-variant focus:border-secondary focus:ring-1 focus:ring-secondary focus:outline-none transition-colors w-48 md:w-64 text-on-surface font-body-sm text-sm"
-          placeholder="Buscar servicios, clientes..."
+          placeholder="Buscar servicios..."
           type="text"
         />
       </div>
@@ -160,20 +160,19 @@
     </div>
   </header>
 
-  <!-- Page Content: Service Registration Form (Con ancho flexible y sin restricciones de max-w-6xl apretado) -->
-  <main class="flex-1 p-6 md:p-8 overflow-y-auto">
-    <div class="max-w-[1400px] mx-auto w-full">
+  <!-- Page Content -->
+  <main class="flex-1 p-6 md:p-8 overflow-y-auto bg-background">
+    <!-- SOLUCIÓN AQUÍ: w-full asegura adaptabilidad, max-w-5xl lo hace más pequeño y compacto. SIN mx-auto para que se pegue a la izquierda -->
+    <div class="w-full max-w-6xl">
       <div class="mb-6">
-        <h2 class="font-headline-md text-2xl font-bold text-on-surface mb-1">
-          Registro de Nuevo Servicio
-        </h2>
-        <p class="font-body-md text-sm text-on-surface-variant">
-          Módulo 02: Ingrese los detalles para la nueva operación logística.
+        <h2 class="text-2xl font-semibold text-on-surface mb-1">Registro de Nuevo Servicio</h2>
+        <p class="font-body-sm text-sm text-on-surface-variant">
+          Ingrese los detalles para la nueva operación logística.
         </p>
       </div>
 
       <!-- Form Container -->
-      <div class="glass-card rounded-xl overflow-hidden">
+      <div class="glass-card rounded-xl overflow-hidden mb-8">
         <!-- Stepper Header -->
         <div
           class="flex border-b border-outline-variant bg-surface-container-low/50 overflow-x-auto"
@@ -224,7 +223,7 @@
           </div>
         </div>
 
-        <form class="p-6 sm:p-8">
+        <form class="p-6 md:p-8">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
             <!-- Left Column: Client & Dates -->
             <div class="lg:col-span-4 space-y-6">
@@ -253,7 +252,7 @@
                 <div>
                   <label
                     class="block font-label-caps text-xs font-bold text-on-surface-variant mb-2 uppercase tracking-wider"
-                    >Fecha del Servicio *</label
+                    >Fecha *</label
                   >
                   <div class="relative">
                     <input
@@ -265,7 +264,7 @@
                 <div>
                   <label
                     class="block font-label-caps text-xs font-bold text-on-surface-variant mb-2 uppercase tracking-wider"
-                    >Entrega Estimada</label
+                    >Entrega Est.</label
                   >
                   <div class="relative">
                     <input
@@ -281,11 +280,11 @@
                   class="block font-label-caps text-xs font-bold text-on-surface-variant mb-2 uppercase tracking-wider"
                   >Nivel de Prioridad</label
                 >
-                <div class="flex flex-wrap gap-4">
+                <div class="flex flex-col sm:flex-row flex-wrap gap-4 mt-2">
                   <label class="flex items-center gap-2 cursor-pointer group">
                     <input
                       checked
-                      class="w-4 h-4 text-secondary border-outline-variant focus:ring-secondary"
+                      class="w-4 h-4 text-secondary border-outline-variant focus:ring-secondary cursor-pointer"
                       name="priority"
                       type="radio"
                       value="standard"
@@ -297,7 +296,7 @@
                   </label>
                   <label class="flex items-center gap-2 cursor-pointer group">
                     <input
-                      class="w-4 h-4 text-secondary border-outline-variant focus:ring-secondary"
+                      class="w-4 h-4 text-secondary border-outline-variant focus:ring-secondary cursor-pointer"
                       name="priority"
                       type="radio"
                       value="expedited"
@@ -309,7 +308,7 @@
                   </label>
                   <label class="flex items-center gap-2 cursor-pointer group">
                     <input
-                      class="w-4 h-4 text-error border-outline-variant focus:ring-error"
+                      class="w-4 h-4 text-error border-outline-variant focus:ring-error cursor-pointer"
                       name="priority"
                       type="radio"
                       value="critical"
@@ -325,7 +324,7 @@
 
             <!-- Right Column: Routing & Load -->
             <div class="lg:col-span-8 space-y-6">
-              <div class="bg-surface-container-low p-6 rounded-lg border border-outline-variant">
+              <div class="bg-surface-container-low p-5 rounded-lg border border-outline-variant">
                 <h3
                   class="font-title-sm text-lg font-semibold text-on-surface mb-4 flex items-center gap-2"
                 >
@@ -441,7 +440,7 @@
                 <div>
                   <label
                     class="block font-label-caps text-xs font-bold text-on-surface-variant mb-2 uppercase tracking-wider"
-                    >Peso de Carga (Toneladas)</label
+                    >Peso de Carga (Ton)</label
                   >
                   <div class="relative">
                     <input
@@ -461,19 +460,19 @@
               <div>
                 <label
                   class="block font-label-caps text-xs font-bold text-on-surface-variant mb-2 uppercase tracking-wider"
-                  >Detalles de Carga y Observaciones</label
+                  >Carga y Observaciones</label
                 >
                 <textarea
                   class="w-full bg-surface border border-outline-variant rounded-lg px-3 py-2.5 font-body-sm text-sm text-on-surface focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-colors resize-none"
-                  placeholder="Ingrese instrucciones de manejo, material peligroso, o requerimientos especiales..."
-                  rows="3"
+                  placeholder="Instrucciones de manejo, material peligroso..."
+                  rows="2"
                 ></textarea>
               </div>
             </div>
           </div>
 
           <!-- Form Actions -->
-          <div class="mt-8 pt-6 border-t border-outline-variant flex justify-end gap-3">
+          <div class="mt-8 pt-5 border-t border-outline-variant flex justify-end gap-3">
             <button
               routerLink="/dashboard"
               class="px-5 py-2.5 rounded-lg border border-outline-variant bg-surface hover:bg-surface-container-low transition-colors font-label-caps text-xs font-bold text-on-surface uppercase tracking-wider cursor-pointer"
@@ -485,7 +484,7 @@
               class="px-6 py-2.5 rounded-lg bg-secondary hover:bg-opacity-90 transition-colors font-label-caps text-xs font-bold text-white uppercase tracking-wider shadow-sm cursor-pointer"
               type="button"
             >
-              Siguiente: Revisar
+              Siguiente
             </button>
           </div>
         </form>
