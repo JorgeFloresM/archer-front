@@ -1,415 +1,403 @@
-<!-- SideNavBar (Menú Lateral Unificado) -->
-<nav
-  class="w-[260px] h-screen fixed left-0 top-0 bg-primary border-r border-outline-variant flex flex-col py-6 z-50"
->
-  <div class="px-6 mb-8 flex items-center gap-3">
-    <div
-      class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center shrink-0"
-    >
-      <span class="material-symbols-outlined text-primary text-[24px]">local_shipping</span>
-    </div>
-    <div>
-      <h1 class="font-headline-md text-xl text-on-primary m-0 font-bold tracking-tight">
-        Archer Control
-      </h1>
-      <p
-        class="font-label-caps text-[10px] text-on-primary-container mt-0.5 opacity-80 uppercase tracking-wider"
-      >
-        Gestión Logística
-      </p>
-    </div>
-  </div>
-  <div class="flex-1 overflow-y-auto font-body-md text-sm">
-    <a
-      routerLink="/dashboard"
-      class="flex items-center gap-3 px-4 py-3 text-surface-variant hover:text-on-primary hover:bg-on-primary-fixed-variant/50 transition-all duration-200 cursor-pointer"
-    >
-      <span class="material-symbols-outlined text-[20px]">dashboard</span>
-      <span>Dashboard</span>
-    </a>
-
-    <a
-      routerLink="/nuevo-servicio"
-      class="flex items-center gap-3 px-4 py-3 text-surface-variant hover:text-on-primary hover:bg-on-primary-fixed-variant/50 transition-all duration-200 cursor-pointer"
-    >
-      <span class="material-symbols-outlined text-[20px]">settings_suggest</span>
-      <span>Servicios</span>
-    </a>
-
-    <a
-      routerLink="/clientes"
-      class="flex items-center gap-3 px-4 py-3 text-surface-variant hover:text-on-primary hover:bg-on-primary-fixed-variant/50 transition-all duration-200 cursor-pointer"
-    >
-      <span class="material-symbols-outlined text-[20px]">group</span>
-      <span>Clientes</span>
-    </a>
-
-    <a
-      routerLink="/transportistas"
-      class="flex items-center gap-3 px-4 py-3 text-surface-variant hover:text-on-primary hover:bg-on-primary-fixed-variant/50 transition-all duration-200 cursor-pointer"
-    >
-      <span class="material-symbols-outlined text-[20px]">business_center</span>
-      <span>Transportistas / Unidades</span>
-    </a>
-
-    <!-- Active: Asignación -->
-    <a
-      routerLink="/asignacion"
-      class="flex items-center gap-3 px-4 py-3 border-l-2 border-secondary bg-on-primary-fixed-variant text-on-primary font-bold transition-all duration-200 cursor-pointer"
-    >
-      <span class="material-symbols-outlined text-[20px]">assignment_ind</span>
-      <span>Asignación</span>
-    </a>
-
-    <a
-      href="#"
-      class="flex items-center gap-3 px-4 py-3 text-surface-variant hover:text-on-primary hover:bg-on-primary-fixed-variant/50 transition-all duration-200"
-    >
-      <span class="material-symbols-outlined text-[20px]">local_shipping</span>
-      <span>Seguimiento Operativo</span>
-    </a>
-
-    <a
-      href="#"
-      class="flex items-center gap-3 px-4 py-3 text-surface-variant hover:text-on-primary hover:bg-on-primary-fixed-variant/50 transition-all duration-200"
-    >
-      <span class="material-symbols-outlined text-[20px]">task_alt</span>
-      <span>Evidencias</span>
-    </a>
-
-    <a
-      href="#"
-      class="flex items-center gap-3 px-4 py-3 text-surface-variant hover:text-on-primary hover:bg-on-primary-fixed-variant/50 transition-all duration-200"
-    >
-      <span class="material-symbols-outlined text-[20px]">assessment</span>
-      <span>Reportes</span>
-    </a>
-
-    <a
-      href="#"
-      class="flex items-center gap-3 px-4 py-3 text-surface-variant hover:text-on-primary hover:bg-on-primary-fixed-variant/50 transition-all duration-200"
-    >
-      <span class="material-symbols-outlined text-[20px]">payments</span>
-      <span>Finanzas</span>
-    </a>
-  </div>
-  <!-- User Profile (Bottom) -->
-  <div class="mt-auto px-4 w-full">
-    <div
-      class="flex items-center gap-3 p-3 rounded-lg hover:bg-on-primary-fixed-variant/50 cursor-pointer transition-colors border border-on-primary-fixed-variant"
-    >
-      <img
-        alt="User Profile"
-        class="w-8 h-8 rounded-full object-cover shrink-0"
-        src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7MwM38XyGqbR6ACo0Qp1cSft-Zun6GJawU3b48AnS1Lzssyo6IxDoIDIYL5n7yoaArsu_Ibai4G8I8UTvIow4k9rRPrBUp8fKDaxhylykqWOKY-1MpsINCRNiac3Px6j_Cn4jKGE4_jIkkapPv_31q8-HvwrUkwNIrqw8oFTIH2fQ327x08r81AHjKyUlTdv7DpbLKctJAlv_1VW5b-E2dtw1HRpUSiJ2XTv1jIlwLBY5FCDvM6a05uBUbXO2vffmcE89x0Fw9L5T"
-      />
-      <div class="flex flex-col overflow-hidden">
-        <span class="font-body-sm text-xs text-on-primary truncate font-bold">Admin User</span>
-        <span
-          class="font-label-caps text-[9px] text-surface-variant truncate opacity-80 uppercase tracking-wider"
-          >Operaciones</span
-        >
-      </div>
-    </div>
-  </div>
-</nav>
-
-<!-- Main Content Area (Área Principal) -->
-<div class="ml-[260px] flex-1 flex flex-col h-screen relative w-full overflow-hidden bg-background">
-  <!-- TopAppBar (Barra Superior Unificada) -->
-  <header
-    class="h-16 flex-shrink-0 sticky top-0 z-40 bg-surface border-b border-outline-variant flex items-center justify-between px-6 w-full font-label-caps text-xs text-primary"
+<!-- Contenedor Base de la Aplicación (100% del ancho y alto) -->
+<div class="min-h-screen bg-surface-container w-full p-3 sm:p-5 flex flex-col font-sans">
+  <!-- La Gran Tarjeta Blanca que contiene TODO -->
+  <div
+    class="bg-surface w-full flex-1 rounded-3xl shadow-xl flex flex-col overflow-hidden relative"
   >
-    <div class="flex items-center gap-4">
-      <span class="font-title-sm text-lg font-semibold text-on-surface">Archer Control</span>
-      <div class="relative ml-4 md:ml-8 hidden sm:block">
-        <span
-          class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline"
-          >search</span
-        >
-        <input
-          class="pl-10 pr-4 py-2 bg-surface-container rounded border border-outline-variant focus:border-secondary focus:ring-1 focus:ring-secondary focus:outline-none transition-colors w-48 md:w-64 text-on-surface font-body-sm text-sm"
-          placeholder="Buscar folio o destino..."
-          type="text"
-          [(ngModel)]="searchTerm"
-        />
-      </div>
-    </div>
-
-    <div class="flex items-center gap-3">
-      <button
-        class="text-on-surface-variant hover:bg-surface-container-high transition-colors p-2 rounded-full cursor-pointer"
-      >
-        <span class="material-symbols-outlined">notifications</span>
-      </button>
-      <button
-        class="text-on-surface-variant hover:bg-surface-container-high transition-colors p-2 rounded-full cursor-pointer"
-      >
-        <span class="material-symbols-outlined">settings</span>
-      </button>
-      <div
-        class="w-8 h-8 rounded-full bg-primary-container overflow-hidden border border-outline-variant ml-1 md:ml-2 flex-shrink-0"
-      >
-        <img
-          alt="User Profile"
-          class="w-full h-full object-cover"
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7MwM38XyGqbR6ACo0Qp1cSft-Zun6GJawU3b48AnS1Lzssyo6IxDoIDIYL5n7yoaArsu_Ibai4G8I8UTvIow4k9rRPrBUp8fKDaxhylykqWOKY-1MpsINCRNiac3Px6j_Cn4jKGE4_jIkkapPv_31q8-HvwrUkwNIrqw8oFTIH2fQ327x08r81AHjKyUlTdv7DpbLKctJAlv_1VW5b-E2dtw1HRpUSiJ2XTv1jIlwLBY5FCDvM6a05uBUbXO2vffmcE89x0Fw9L5T"
-        />
-      </div>
-    </div>
-  </header>
-
-  <!-- Page Content (Mismo contenedor y padding) -->
-  <main class="flex-1 p-6 md:p-8 overflow-y-auto bg-background">
-    <!-- El contenedor LIMITA el ancho al mismo tamaño estándar (1400px) -->
-    <div class="max-w-[1400px] mx-auto w-full relative">
-      <!-- Header de la sección -->
-      <div class="mb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
-        <div>
-          <h2 class="text-2xl font-semibold text-on-surface mb-1">Asignación de Unidades</h2>
-          <p class="font-body-sm text-sm text-on-surface-variant">
-            Módulo 05: Selección de unidad o transportista según carga, destino y disponibilidad.
+    <!-- TopBar (Header y Navegación) -->
+    <header
+      class="flex items-center justify-between px-6 py-5 border-b border-outline-variant/50 gap-4"
+    >
+      <!-- Logo y Título -->
+      <div class="flex items-center gap-3 shrink-0">
+        <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-md">
+          <span class="material-symbols-outlined text-on-primary font-bold">shield</span>
+        </div>
+        <div class="hidden sm:block">
+          <h1 class="font-bold text-on-surface text-xl leading-tight">Archer Control</h1>
+          <p class="text-on-surface-variant text-[11px] font-medium uppercase tracking-wider">
+            Command Center
           </p>
         </div>
-        <div class="flex items-center gap-3 w-full md:w-auto">
+      </div>
+
+      <!-- Navegación Central (La "Píldora" oscura con TODAS las opciones y scroll invisible) -->
+      <nav
+        class="hidden lg:flex items-center bg-primary rounded-full p-1.5 shadow-md overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] max-w-[65vw]"
+      >
+        <a
+          routerLink="/dashboard"
+          class="px-4 py-2 rounded-full text-on-primary hover:bg-white/10 font-medium text-sm transition-all cursor-pointer whitespace-nowrap"
+        >
+          Overview
+        </a>
+        <a
+          routerLink="/nuevo-servicio"
+          class="px-4 py-2 rounded-full text-on-primary hover:bg-white/10 font-medium text-sm transition-all cursor-pointer whitespace-nowrap"
+        >
+          Servicios
+        </a>
+        <a
+          routerLink="/clientes"
+          class="px-4 py-2 rounded-full text-on-primary hover:bg-white/10 font-medium text-sm transition-all cursor-pointer whitespace-nowrap"
+        >
+          Clientes
+        </a>
+        <a
+          routerLink="/transportistas"
+          class="px-4 py-2 rounded-full text-on-primary hover:bg-white/10 font-medium text-sm transition-all cursor-pointer whitespace-nowrap"
+        >
+          Unidades
+        </a>
+        <!-- ACTIVE: Asignación -->
+        <a
+          routerLink="/asignacion"
+          class="px-4 py-2 rounded-full bg-secondary text-on-secondary font-semibold text-sm transition-all shadow-sm cursor-pointer whitespace-nowrap"
+        >
+          Asignación
+        </a>
+        <a
+          routerLink="/seguimiento"
+          class="px-4 py-2 rounded-full text-on-primary hover:bg-white/10 font-medium text-sm transition-all cursor-pointer whitespace-nowrap"
+        >
+          Seguimiento
+        </a>
+        <a
+          routerLink="/evidencias"
+          class="px-4 py-2 rounded-full text-on-primary hover:bg-white/10 font-medium text-sm transition-all cursor-pointer whitespace-nowrap"
+        >
+          Evidencias
+        </a>
+        <a
+          routerLink="/reportes"
+          class="px-4 py-2 rounded-full text-on-primary hover:bg-white/10 font-medium text-sm transition-all cursor-pointer whitespace-nowrap"
+        >
+          Reportes
+        </a>
+        <a
+          routerLink="/finanzas"
+          class="px-4 py-2 rounded-full text-on-primary hover:bg-white/10 font-medium text-sm transition-all cursor-pointer whitespace-nowrap"
+        >
+          Finanzas
+        </a>
+      </nav>
+
+      <!-- Utilidades Derecha (Buscador, Notificaciones, Perfil) -->
+      <div class="flex items-center gap-3 shrink-0">
+        <button class="text-on-surface hover:text-secondary transition-colors cursor-pointer p-1">
+          <span class="material-symbols-outlined">search</span>
+        </button>
+        <button class="text-on-surface hover:text-secondary transition-colors cursor-pointer p-1">
+          <span class="material-symbols-outlined">notifications</span>
+        </button>
+        <button class="text-on-surface hover:text-secondary transition-colors cursor-pointer p-1">
+          <span class="material-symbols-outlined">settings</span>
+        </button>
+        <div
+          class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden border-2 border-surface ml-1 shadow-sm cursor-pointer"
+        >
+          <img
+            alt="User Profile"
+            class="w-full h-full object-cover"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7MwM38XyGqbR6ACo0Qp1cSft-Zun6GJawU3b48AnS1Lzssyo6IxDoIDIYL5n7yoaArsu_Ibai4G8I8UTvIow4k9rRPrBUp8fKDaxhylykqWOKY-1MpsINCRNiac3Px6j_Cn4jKGE4_jIkkapPv_31q8-HvwrUkwNIrqw8oFTIH2fQ327x08r81AHjKyUlTdv7DpbLKctJAlv_1VW5b-E2dtw1HRpUSiJ2XTv1jIlwLBY5FCDvM6a05uBUbXO2vffmcE89x0Fw9L5T"
+          />
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Area (Fluido) -->
+    <main class="flex-1 p-6 lg:p-8 overflow-y-auto w-full">
+      <!-- Contenedor centrado para la vista dividida (max-w-[1400px] es ideal para Split View) -->
+      <div class="w-full max-w-[1400px] mx-auto">
+        <!-- Header de la sección -->
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+          <div class="flex items-center gap-4">
+            <div>
+              <h2 class="text-2xl md:text-3xl font-bold text-on-surface mb-1">
+                Asignación de Unidades
+              </h2>
+              <p class="font-body-sm text-sm text-on-surface-variant">
+                Módulo 05: Selección de unidad o transportista según carga, destino y
+                disponibilidad.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-center gap-3 w-full md:w-auto">
+            <button
+              (click)="mostrarMensaje('Generando reporte de asignaciones del día')"
+              class="bg-surface border border-outline-variant text-on-surface px-4 py-2.5 rounded-full font-label-caps text-xs font-bold uppercase hover:bg-surface-container-low transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-sm w-full md:w-auto shrink-0"
+            >
+              <span class="material-symbols-outlined text-[18px]">print</span> Exportar
+            </button>
+          </div>
+        </div>
+
+        <!-- Layout Split: Izquierda (Servicios) y Derecha (Unidades Disponibles) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <!-- COLUMNA IZQUIERDA: Servicios Pendientes -->
+          <div class="lg:col-span-5 flex flex-col gap-4">
+            <div class="flex items-center justify-between mb-2 px-1">
+              <h3 class="font-title-sm text-lg font-semibold text-on-surface">
+                Servicios por Asignar
+              </h3>
+              <span
+                class="bg-surface-container-highest text-on-surface font-label-caps text-xs font-bold px-2 py-1 rounded-full"
+              >
+                {{ serviciosPendientes.length }}
+              </span>
+            </div>
+
+            <!-- Lista de Tarjetas (Cards) de Servicios -->
+            <div *ngIf="serviciosPendientes.length > 0; else noServicios">
+              <div
+                *ngFor="let srv of filteredServicios"
+                (click)="seleccionarServicio(srv)"
+                class="glass-card rounded-xl p-5 mb-3 cursor-pointer transition-all border-l-4 hover:shadow-md"
+                [ngClass]="
+                  servicioSeleccionado?.id === srv.id
+                    ? 'border-l-secondary bg-surface-container-lowest scale-[1.02]'
+                    : 'border-l-transparent bg-surface opacity-80 hover:opacity-100'
+                "
+              >
+                <div class="flex justify-between items-start mb-3">
+                  <div class="font-data-mono text-secondary font-bold text-sm">{{ srv.id }}</div>
+                  <span
+                    class="font-label-caps text-[9px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-full"
+                    [ngClass]="
+                      srv.prioridad === 'Alta'
+                        ? 'bg-error-container text-error'
+                        : 'bg-surface-container-highest text-on-surface-variant'
+                    "
+                  >
+                    {{ srv.prioridad }}
+                  </span>
+                </div>
+
+                <div class="font-semibold text-on-surface text-sm mb-1 truncate">
+                  {{ srv.cliente }}
+                </div>
+
+                <div
+                  class="flex items-center gap-2 mt-3 text-xs text-on-surface-variant font-medium"
+                >
+                  <span class="material-symbols-outlined text-[16px] text-outline"
+                    >my_location</span
+                  >
+                  <span class="truncate">{{ srv.origen }}</span>
+                </div>
+                <div
+                  class="flex items-center gap-2 mt-1 text-xs text-on-surface-variant font-medium"
+                >
+                  <span class="material-symbols-outlined text-[16px] text-outline">flag</span>
+                  <span class="truncate">{{ srv.destino }}</span>
+                </div>
+
+                <div
+                  class="mt-4 pt-3 border-t border-outline-variant/50 flex justify-between items-center text-xs"
+                >
+                  <div class="flex items-center gap-1.5 font-bold text-on-surface">
+                    <span class="material-symbols-outlined text-[16px]">local_shipping</span>
+                    {{ srv.tipoRequerido }}
+                  </div>
+                  <span class="font-data-mono text-outline">{{ srv.peso }}</span>
+                </div>
+              </div>
+            </div>
+
+            <ng-template #noServicios>
+              <div
+                class="glass-card rounded-xl p-8 flex flex-col items-center justify-center text-center opacity-70 border-dashed"
+              >
+                <span class="material-symbols-outlined text-4xl text-outline mb-2">task_alt</span>
+                <p class="font-body-sm text-sm text-on-surface-variant">
+                  No hay servicios pendientes de asignación en este momento.
+                </p>
+              </div>
+            </ng-template>
+          </div>
+
+          <!-- COLUMNA DERECHA: Detalle y Unidades Disponibles -->
+          <div class="lg:col-span-7">
+            <div
+              *ngIf="servicioSeleccionado"
+              class="glass-card rounded-2xl overflow-hidden sticky top-6 shadow-sm border border-outline-variant"
+            >
+              <!-- Encabezado del Servicio Activo -->
+              <div
+                class="p-6 md:p-8 border-b border-outline-variant bg-surface-container-low/30 relative overflow-hidden"
+              >
+                <!-- Decoración sutil -->
+                <div
+                  class="absolute -right-10 -top-10 w-40 h-40 bg-secondary/5 rounded-full blur-2xl pointer-events-none"
+                ></div>
+
+                <div
+                  class="font-label-caps text-xs text-on-surface-variant uppercase tracking-wider mb-1 relative z-10"
+                >
+                  Asignando unidad para:
+                </div>
+                <h3 class="font-title-sm text-2xl font-bold text-on-surface relative z-10">
+                  {{ servicioSeleccionado.id }} - {{ servicioSeleccionado.cliente }}
+                </h3>
+                <div class="flex flex-wrap items-center gap-2 mt-3 relative z-10">
+                  <span
+                    class="bg-surface-container px-3 py-1 rounded-full text-xs font-bold text-on-surface border border-outline-variant/50"
+                  >
+                    Requisito: {{ servicioSeleccionado.tipoRequerido }}
+                  </span>
+                  <span
+                    class="bg-surface-container px-3 py-1 rounded-full text-xs font-medium text-on-surface-variant border border-outline-variant/50"
+                  >
+                    Peso: {{ servicioSeleccionado.peso }}
+                  </span>
+                </div>
+              </div>
+
+              <!-- Header de Lista de Unidades -->
+              <div
+                class="p-4 border-b border-outline-variant bg-surface-container-lowest flex justify-between items-center gap-4 flex-wrap"
+              >
+                <h4 class="font-title-sm text-sm font-bold text-on-surface flex items-center gap-2">
+                  <span class="material-symbols-outlined text-[18px] text-secondary"
+                    >verified_user</span
+                  >
+                  Unidades Sugeridas
+                </h4>
+                <div class="relative">
+                  <span
+                    class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[16px]"
+                    >search</span
+                  >
+                  <input
+                    type="text"
+                    placeholder="Buscar unidad..."
+                    class="pl-9 pr-4 py-1.5 bg-surface rounded-full border border-outline-variant focus:border-secondary focus:ring-1 focus:ring-secondary focus:outline-none transition-colors text-xs text-on-surface w-40 md:w-56"
+                  />
+                </div>
+              </div>
+
+              <!-- Tabla de Unidades para Asignar -->
+              <div
+                class="overflow-x-auto w-full bg-surface-container-lowest h-[450px] overflow-y-auto"
+              >
+                <table class="w-full text-left border-collapse">
+                  <thead class="sticky top-0 bg-surface-container-lowest shadow-sm z-10">
+                    <tr
+                      class="border-b border-outline-variant font-label-caps text-[10px] text-on-surface-variant uppercase tracking-wider"
+                    >
+                      <th class="p-4 font-bold">Unidad / Tipo</th>
+                      <th class="p-4 font-bold">Ubicación / Distancia</th>
+                      <th class="p-4 font-bold">Estatus</th>
+                      <th class="p-4 font-bold text-right">Acción</th>
+                    </tr>
+                  </thead>
+                  <tbody class="font-body-sm text-sm text-on-surface">
+                    <tr
+                      *ngFor="let u of unidadesSugeridas"
+                      class="border-b border-outline-variant/50 hover:bg-surface-container-low transition-colors group"
+                      [ngClass]="{
+                        'bg-surface-container-high/20 opacity-70':
+                          u.tipo !== servicioSeleccionado.tipoRequerido,
+                      }"
+                    >
+                      <td class="p-4">
+                        <div class="flex flex-col">
+                          <span class="font-data-mono font-bold text-secondary text-[13px]">{{
+                            u.id
+                          }}</span>
+                          <span class="font-semibold text-xs mt-0.5">{{ u.tipo }}</span>
+                          <span class="text-outline text-[10px] mt-0.5 truncate max-w-[120px]">{{
+                            u.operador
+                          }}</span>
+                        </div>
+                      </td>
+
+                      <td class="p-4">
+                        <div class="flex flex-col">
+                          <span class="font-medium text-xs">{{ u.ubicacion }}</span>
+                          <span class="text-outline text-[10px] mt-0.5 flex items-center gap-1">
+                            <span class="material-symbols-outlined text-[12px]"
+                              >directions_car</span
+                            >
+                            {{ u.distancia }}
+                          </span>
+                        </div>
+                      </td>
+
+                      <td class="p-4 whitespace-nowrap">
+                        <span
+                          class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg font-label-caps text-[9px] uppercase font-bold tracking-wider"
+                          [ngClass]="
+                            u.estatus === 'Disponible'
+                              ? 'bg-primary-fixed text-on-primary-fixed'
+                              : 'bg-surface-variant text-on-surface-variant'
+                          "
+                        >
+                          <span
+                            class="w-1.5 h-1.5 rounded-full"
+                            [ngClass]="u.estatus === 'Disponible' ? 'bg-secondary' : 'bg-outline'"
+                          ></span>
+                          {{ u.estatus }}
+                        </span>
+                        <!-- Warning si no hace match el tipo -->
+                        <div
+                          *ngIf="u.tipo !== servicioSeleccionado.tipoRequerido"
+                          class="text-error text-[9px] font-bold uppercase mt-1.5 flex items-center gap-1"
+                          title="El tipo de unidad no coincide con el requerimiento"
+                        >
+                          <span class="material-symbols-outlined text-[12px]">warning</span> No
+                          coincide
+                        </div>
+                      </td>
+
+                      <td class="p-4 text-right whitespace-nowrap">
+                        <button
+                          (click)="asignarUnidad(u)"
+                          class="bg-secondary text-white hover:bg-opacity-90 transition-all px-4 py-2 rounded-full font-label-caps text-[10px] font-bold uppercase shadow-sm cursor-pointer hover:scale-105 active:scale-95"
+                        >
+                          Asignar
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Estado vacío a la derecha si no hay servicio seleccionado -->
+            <div
+              *ngIf="!servicioSeleccionado"
+              class="glass-card rounded-2xl p-8 flex flex-col items-center justify-center text-center opacity-70 h-full min-h-[400px] border-dashed"
+            >
+              <div
+                class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-4"
+              >
+                <span class="material-symbols-outlined text-3xl text-outline">assignment</span>
+              </div>
+              <h3 class="font-title-sm text-lg font-bold text-on-surface mb-1">Sin Selección</h3>
+              <p class="font-body-sm text-sm text-on-surface-variant max-w-sm">
+                Selecciona un servicio de la columna izquierda para ver las unidades disponibles y
+                realizar la asignación.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Toast Flotante (Notificación) -->
+        <div
+          *ngIf="mensajeActivo"
+          class="fixed bottom-6 right-6 bg-surface-container-highest border border-outline-variant shadow-lg text-on-surface p-4 rounded-xl flex items-center gap-3 z-50 animate-[bounce_0.2s_ease-in-out]"
+        >
+          <span class="material-symbols-outlined text-secondary text-[24px]">check_circle</span>
+          <span class="font-body-sm text-sm font-medium">{{ mensajeActivo }}</span>
           <button
-            (click)="mostrarMensaje('Generando reporte de asignaciones del día')"
-            class="bg-surface border border-outline-variant text-on-surface px-4 py-2.5 rounded-lg font-label-caps text-xs font-bold uppercase hover:bg-surface-container-low transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-sm w-full md:w-auto shrink-0"
+            (click)="mensajeActivo = null"
+            class="ml-2 text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer p-1"
           >
-            <span class="material-symbols-outlined text-[18px]">print</span> Exportar
+            <span class="material-symbols-outlined text-[18px]">close</span>
           </button>
         </div>
       </div>
-
-      <!-- Layout Split: Izquierda (Servicios) y Derecha (Unidades Disponibles) -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        <!-- COLUMNA IZQUIERDA: Servicios Pendientes -->
-        <div class="lg:col-span-5 flex flex-col gap-4">
-          <div class="flex items-center justify-between mb-2">
-            <h3 class="font-title-sm text-lg font-semibold text-on-surface">
-              Servicios por Asignar
-            </h3>
-            <span
-              class="bg-surface-container-highest text-on-surface font-label-caps text-xs font-bold px-2 py-1 rounded"
-              >{{ serviciosPendientes.length }}</span
-            >
-          </div>
-
-          <!-- Lista de Tarjetas (Cards) de Servicios -->
-          <div *ngIf="serviciosPendientes.length > 0; else noServicios">
-            <div
-              *ngFor="let srv of filteredServicios"
-              (click)="seleccionarServicio(srv)"
-              class="glass-card rounded-xl p-4 mb-3 cursor-pointer transition-all border-l-4 hover:shadow-md"
-              [ngClass]="
-                servicioSeleccionado?.id === srv.id
-                  ? 'border-l-secondary bg-surface-container-lowest'
-                  : 'border-l-transparent bg-surface opacity-80 hover:opacity-100'
-              "
-            >
-              <div class="flex justify-between items-start mb-3">
-                <div class="font-data-mono text-secondary font-bold">{{ srv.id }}</div>
-                <span
-                  class="font-label-caps text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded"
-                  [ngClass]="
-                    srv.prioridad === 'Alta'
-                      ? 'bg-error-container/50 text-error'
-                      : 'bg-surface-container-highest text-on-surface-variant'
-                  "
-                >
-                  {{ srv.prioridad }}
-                </span>
-              </div>
-
-              <div class="font-semibold text-on-surface text-sm mb-1 truncate">
-                {{ srv.cliente }}
-              </div>
-
-              <div class="flex items-center gap-2 mt-3 text-xs text-on-surface-variant font-medium">
-                <span class="material-symbols-outlined text-[16px] text-outline">my_location</span>
-                <span class="truncate">{{ srv.origen }}</span>
-              </div>
-              <div class="flex items-center gap-2 mt-1 text-xs text-on-surface-variant font-medium">
-                <span class="material-symbols-outlined text-[16px] text-outline">flag</span>
-                <span class="truncate">{{ srv.destino }}</span>
-              </div>
-
-              <div
-                class="mt-4 pt-3 border-t border-outline-variant flex justify-between items-center text-xs"
-              >
-                <div class="flex items-center gap-1.5 font-bold text-on-surface">
-                  <span class="material-symbols-outlined text-[16px]">local_shipping</span>
-                  {{ srv.tipoRequerido }}
-                </div>
-                <span class="font-data-mono text-outline">{{ srv.peso }}</span>
-              </div>
-            </div>
-          </div>
-
-          <ng-template #noServicios>
-            <div
-              class="glass-card rounded-xl p-8 flex flex-col items-center justify-center text-center opacity-70"
-            >
-              <span class="material-symbols-outlined text-4xl text-outline mb-2">task_alt</span>
-              <p class="font-body-sm text-sm text-on-surface-variant">
-                No hay servicios pendientes de asignación en este momento.
-              </p>
-            </div>
-          </ng-template>
-        </div>
-
-        <!-- COLUMNA DERECHA: Detalle y Unidades Disponibles -->
-        <div class="lg:col-span-7">
-          <div
-            *ngIf="servicioSeleccionado"
-            class="glass-card rounded-xl overflow-hidden sticky top-6"
-          >
-            <!-- Encabezado del Servicio Activo -->
-            <div class="p-6 border-b border-outline-variant bg-surface-container-low/30">
-              <div
-                class="font-label-caps text-xs text-on-surface-variant uppercase tracking-wider mb-1"
-              >
-                Asignando unidad para:
-              </div>
-              <h3 class="font-title-sm text-xl font-semibold text-on-surface">
-                {{ servicioSeleccionado.id }} - {{ servicioSeleccionado.cliente }}
-              </h3>
-              <p class="font-body-sm text-sm text-outline mt-1">
-                Requisito:
-                <span class="font-bold text-on-surface-variant">{{
-                  servicioSeleccionado.tipoRequerido
-                }}</span
-                >, {{ servicioSeleccionado.peso }}
-              </p>
-            </div>
-
-            <!-- Header de Lista de Unidades -->
-            <div
-              class="p-4 border-b border-outline-variant bg-surface-container-lowest flex justify-between items-center gap-4 flex-wrap"
-            >
-              <h4
-                class="font-title-sm text-sm font-semibold text-on-surface flex items-center gap-2"
-              >
-                <span class="material-symbols-outlined text-[18px]">verified_user</span> Unidades
-                Sugeridas
-              </h4>
-              <button
-                class="text-on-surface-variant hover:bg-surface-container-low transition-colors p-1.5 px-3 rounded border border-outline-variant bg-surface flex items-center gap-2 text-xs font-bold uppercase cursor-pointer"
-              >
-                <span class="material-symbols-outlined text-[16px]">filter_list</span> Filtrar
-              </button>
-            </div>
-
-            <!-- Tabla de Unidades para Asignar -->
-            <div
-              class="overflow-x-auto w-full bg-surface-container-lowest h-[450px] overflow-y-auto"
-            >
-              <table class="w-full text-left border-collapse">
-                <thead class="sticky top-0 bg-surface-container-lowest shadow-sm z-10">
-                  <tr
-                    class="border-b border-outline-variant font-label-caps text-[10px] text-on-surface-variant uppercase tracking-wider"
-                  >
-                    <th class="p-4 font-bold">Unidad / Tipo</th>
-                    <th class="p-4 font-bold">Ubicación / Distancia</th>
-                    <th class="p-4 font-bold">Estatus</th>
-                    <th class="p-4 font-bold text-right">Acción</th>
-                  </tr>
-                </thead>
-                <tbody class="font-body-sm text-sm text-on-surface">
-                  <tr
-                    *ngFor="let u of unidadesSugeridas"
-                    class="border-b border-outline-variant hover:bg-surface-container-low transition-colors group"
-                    [ngClass]="{
-                      'bg-surface-container-high/30': u.tipo !== servicioSeleccionado.tipoRequerido,
-                    }"
-                  >
-                    <td class="p-4">
-                      <div class="flex flex-col">
-                        <span class="font-data-mono font-bold text-secondary">{{ u.id }}</span>
-                        <span class="font-medium text-xs mt-0.5">{{ u.tipo }}</span>
-                        <span class="text-outline text-[10px] mt-0.5 truncate max-w-[120px]">{{
-                          u.operador
-                        }}</span>
-                      </div>
-                    </td>
-
-                    <td class="p-4">
-                      <div class="flex flex-col">
-                        <span class="font-medium text-xs">{{ u.ubicacion }}</span>
-                        <span class="text-outline text-[10px] mt-0.5 flex items-center gap-1">
-                          <span class="material-symbols-outlined text-[12px]">directions_car</span>
-                          {{ u.distancia }}
-                        </span>
-                      </div>
-                    </td>
-
-                    <td class="p-4 whitespace-nowrap">
-                      <span
-                        class="inline-flex items-center gap-1.5 px-2 py-1 rounded font-label-caps text-[9px] uppercase font-bold tracking-wider"
-                        [ngClass]="
-                          u.estatus === 'Disponible'
-                            ? 'bg-primary-fixed text-on-primary-fixed'
-                            : 'bg-surface-variant text-on-surface-variant'
-                        "
-                      >
-                        <span
-                          class="w-1 h-1 rounded-full"
-                          [ngClass]="u.estatus === 'Disponible' ? 'bg-secondary' : 'bg-outline'"
-                        ></span>
-                        {{ u.estatus }}
-                      </span>
-                      <!-- Warning si no hace match el tipo -->
-                      <div
-                        *ngIf="u.tipo !== servicioSeleccionado.tipoRequerido"
-                        class="text-error text-[9px] font-bold uppercase mt-1 flex items-center gap-1"
-                        title="El tipo de unidad no coincide con el requerimiento"
-                      >
-                        <span class="material-symbols-outlined text-[12px]">warning</span> No
-                        coincide
-                      </div>
-                    </td>
-
-                    <td class="p-4 text-right whitespace-nowrap">
-                      <button
-                        (click)="asignarUnidad(u)"
-                        class="bg-secondary text-white hover:bg-opacity-90 transition-colors px-3 py-1.5 rounded font-label-caps text-[10px] font-bold uppercase shadow-sm cursor-pointer"
-                      >
-                        Asignar
-                      </button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          <!-- Estado vacío a la derecha si no hay servicio seleccionado -->
-          <div
-            *ngIf="!servicioSeleccionado"
-            class="glass-card rounded-xl p-8 flex flex-col items-center justify-center text-center opacity-70 h-[300px]"
-          >
-            <span class="material-symbols-outlined text-4xl text-outline mb-2">assignment</span>
-            <p class="font-body-sm text-sm text-on-surface-variant">
-              Selecciona un servicio de la izquierda para ver las unidades disponibles.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Toast Flotante (Notificación) -->
-      <div
-        *ngIf="mensajeActivo"
-        class="fixed bottom-6 right-6 bg-surface-container-highest border border-outline-variant shadow-lg text-on-surface p-4 rounded-xl flex items-center gap-3 z-50 animate-[bounce_0.2s_ease-in-out]"
-      >
-        <span class="material-symbols-outlined text-secondary text-[24px]">check_circle</span>
-        <span class="font-body-sm text-sm font-medium">{{ mensajeActivo }}</span>
-        <button
-          (click)="mensajeActivo = null"
-          class="ml-2 text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer p-1"
-        >
-          <span class="material-symbols-outlined text-[18px]">close</span>
-        </button>
-      </div>
-    </div>
-  </main>
+    </main>
+  </div>
 </div>

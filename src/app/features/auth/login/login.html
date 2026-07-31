@@ -1,92 +1,149 @@
-<div class="min-h-screen flex items-center justify-center bg-archer-bg px-4">
-  <!-- Tarjeta del Login -->
-  <div class="max-w-md w-full bg-white rounded-xl shadow-lg p-8">
-    <!-- Encabezado / Logo -->
-    <div class="text-center mb-8">
-      <!-- Un ícono temporal que representa un paquete/logística -->
-      <div
-        class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-archer-blue mb-4"
-      >
-        <svg
-          class="w-8 h-8 text-archer-green"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M13 10V3L4 14h7v7l9-11h-7z"
-          />
-        </svg>
-      </div>
-      <h2 class="text-2xl font-bold text-archer-blue">Archer Control</h2>
-      <p class="text-sm text-gray-500 mt-2">
-        Ingresa tus credenciales para acceder al panel operativo.
-      </p>
-    </div>
+<div
+  class="bg-background text-on-surface antialiased min-h-screen flex flex-col md:flex-row w-full"
+>
+  <!-- Left side: Hero Image -->
+  <div class="hidden md:flex md:w-1/2 lg:w-7/12 relative bg-surface-container-high overflow-hidden">
+    <!-- Usamos la URL de la imagen que proporcionaste -->
+    <div
+      class="absolute inset-0 bg-cover bg-center w-full h-full"
+      style="background-image: url('/images/warehouse.jpg'); background-position: center"
+    ></div>
+    <!-- Añadimos un pequeño gradiente oscuro/azulado para darle el toque corporativo -->
+    <div
+      class="absolute inset-0 bg-gradient-to-r from-transparent to-surface-container-lowest/40 backdrop-blur-[1px]"
+    ></div>
+  </div>
 
-    <!-- Formulario (Llama al método onLogin() cuando se envía) -->
-    <form (ngSubmit)="onLogin()">
-      <div class="space-y-5">
-        <!-- Input de Correo -->
-        <div>
-          <label for="email" class="block text-sm font-medium text-gray-700 mb-1"
-            >Correo electrónico</label
+  <!-- Right side: Login Form -->
+  <div
+    class="w-full md:w-1/2 lg:w-5/12 flex flex-col justify-center bg-surface-container-lowest px-8 py-12 sm:px-12 lg:px-16 xl:px-24 min-h-screen border-l border-outline-variant/30 relative z-10 shadow-[-10px_0_30px_-15px_rgba(0,0,0,0.05)]"
+  >
+    <div class="w-full max-w-[400px] mx-auto flex flex-col space-y-8">
+      <!-- Brand Logo (Adaptado al estilo Premium) -->
+      <div class="flex items-center gap-3 shrink-0 mb-4">
+        <div class="w-12 h-12 bg-primary rounded-xl flex items-center justify-center shadow-md">
+          <span class="material-symbols-outlined text-on-primary font-bold text-[28px]"
+            >shield</span
           >
-          <input
-            input
-            type="email"
-            id="email"
-            [(ngModel)]="email"
-            name="email"
-            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-archer-green focus:border-transparent outline-none transition-all"
-            placeholder="admin@archerlogistica.com"
-            required
-          />
+        </div>
+        <div>
+          <h2 class="font-bold text-on-surface text-2xl leading-tight">Archer Control</h2>
+          <p class="text-on-surface-variant text-[12px] font-medium uppercase tracking-wider">
+            Command Center
+          </p>
+        </div>
+      </div>
+
+      <!-- Header -->
+      <div class="flex flex-col space-y-2">
+        <h1 class="text-3xl font-black text-on-surface tracking-tight">Iniciar Sesión</h1>
+        <p class="font-body-md text-on-surface-variant">
+          Acceso seguro a la plataforma de administración logística.
+        </p>
+      </div>
+
+      <!-- Form (Conectado a onLogin) -->
+      <form class="flex flex-col space-y-6" (ngSubmit)="onLogin()">
+        <!-- Email Field -->
+        <div class="flex flex-col space-y-1.5">
+          <label
+            class="font-label-caps text-xs font-bold text-on-surface-variant uppercase tracking-wider text-left"
+            for="email"
+            >Correo Electrónico</label
+          >
+          <div class="relative">
+            <span
+              class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]"
+              >mail</span
+            >
+            <input
+              class="w-full h-[44px] pl-10 pr-4 bg-surface border border-outline-variant rounded-lg focus:border-secondary focus:ring-1 focus:ring-secondary focus:outline-none font-body-sm text-sm text-on-surface transition-all duration-200"
+              id="email"
+              [(ngModel)]="email"
+              name="email"
+              placeholder="admin@archerlogistica.com"
+              required
+              type="email"
+            />
+          </div>
         </div>
 
-        <!-- Input de Contraseña -->
-        <div>
-          <label for="password" class="block text-sm font-medium text-gray-700 mb-1"
+        <!-- Password Field -->
+        <div class="flex flex-col space-y-1.5">
+          <label
+            class="font-label-caps text-xs font-bold text-on-surface-variant uppercase tracking-wider text-left"
+            for="password"
             >Contraseña</label
           >
-          <input
-            type="password"
-            id="password"
-            [(ngModel)]="password"
-            name="password"
-            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-archer-green focus:border-transparent outline-none transition-all"
-            placeholder="••••••••"
-            required
-          />
+          <div class="relative">
+            <span
+              class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]"
+              >lock</span
+            >
+            <!-- Usamos una variable local de template (#pwdInput) para manipular el tipo sin meter lógica fea al TS -->
+            <input
+              #pwdInput
+              class="w-full h-[44px] pl-10 pr-10 bg-surface border border-outline-variant rounded-lg focus:border-secondary focus:ring-1 focus:ring-secondary focus:outline-none font-body-sm text-sm text-on-surface transition-all duration-200"
+              id="password"
+              [(ngModel)]="password"
+              name="password"
+              placeholder="••••••••"
+              required
+              type="password"
+            />
+            <button
+              class="absolute right-3 top-1/2 -translate-y-1/2 text-outline hover:text-secondary transition-colors cursor-pointer p-1"
+              (click)="pwdInput.type = pwdInput.type === 'password' ? 'text' : 'password'"
+              type="button"
+            >
+              <span class="material-symbols-outlined text-[20px]">{{
+                pwdInput.type === 'password' ? 'visibility' : 'visibility_off'
+              }}</span>
+            </button>
+          </div>
         </div>
 
-        <!-- Recordarme y Olvidé Contraseña -->
-        <div class="flex items-center justify-between text-sm">
-          <label class="flex items-center text-gray-600 cursor-pointer">
+        <!-- Remember Me & Forgot Password -->
+        <div class="flex items-center justify-between mt-2">
+          <label class="flex items-center space-x-2 cursor-pointer group">
             <input
+              class="w-4 h-4 text-secondary border-outline-variant rounded focus:ring-secondary bg-surface transition-colors cursor-pointer"
               type="checkbox"
-              class="w-4 h-4 text-archer-blue rounded border-gray-300 focus:ring-archer-green cursor-pointer"
             />
-            <span class="ml-2">Recordarme</span>
+            <span
+              class="font-body-sm text-sm text-on-surface-variant group-hover:text-on-surface transition-colors"
+              >Recordarme</span
+            >
           </label>
           <a
+            class="font-body-sm text-sm font-semibold text-secondary hover:text-primary transition-colors"
             href="#"
-            class="text-archer-lightBlue hover:text-archer-blue font-medium transition-colors"
-            >¿Olvidaste tu contraseña?</a
+            >¿Olvidó su contraseña?</a
           >
         </div>
 
-        <!-- Botón de Enviar -->
+        <!-- Submit Button -->
         <button
+          class="mt-4 w-full h-[48px] bg-secondary text-white font-label-caps text-sm font-bold rounded-full flex items-center justify-center space-x-2 hover:bg-opacity-90 transition-all duration-200 shadow-md active:scale-[0.98] cursor-pointer"
           type="submit"
-          class="w-full bg-archer-blue hover:bg-opacity-90 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-200 shadow-md"
         >
-          Iniciar Sesión
+          <span>INICIAR SESIÓN</span>
+          <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
         </button>
+      </form>
+
+      <!-- Footer / System Status -->
+      <div class="pt-8 mt-auto flex items-center justify-center space-x-2">
+        <span class="relative flex h-2.5 w-2.5">
+          <span
+            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"
+          ></span>
+          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+        </span>
+        <span class="font-body-sm text-xs text-on-surface-variant font-medium"
+          >Todos los sistemas operativos</span
+        >
       </div>
-    </form>
+    </div>
   </div>
 </div>

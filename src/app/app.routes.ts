@@ -6,6 +6,10 @@ import { RegistroServicio } from './features/servicios/registro-servicio/registr
 import { ListaClientes } from './features/clientes/lista-clientes/lista-clientes';
 import { ListaTransportistas } from './features/transportistas/lista-transportistas/lista-transportistas';
 import { AsignacionUnidades } from './features/asignacion/asignacion-unidades/asignacion-unidades';
+import { SeguimientoOperativo } from './features/seguimiento/seguimiento-operativo/seguimiento-operativo';
+import { GestionEvidencias } from './features/evidencias/gestion-evidencias/gestion-evidencias';
+import { ReporteServicio } from './features/reportes/reporte-servicio/reporte-servicio';
+import { ResumenFinanciero } from './features/finanzas/resumen-financiero/resumen-financiero';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -15,5 +19,9 @@ export const routes: Routes = [
     { path: 'viaje/:id', component: DetalleViaje },
     { path: 'clientes', component: ListaClientes },
     { path: 'transportistas', component: ListaTransportistas },
-    { path: 'asignacion', component: AsignacionUnidades }
+    { path: 'asignacion', component: AsignacionUnidades },
+    { path: 'seguimiento', component: SeguimientoOperativo },
+    { path: 'evidencias', component: GestionEvidencias },
+    { path: 'reportes', component: ReporteServicio },
+    { path: 'finanzas', component: ResumenFinanciero }
 ];

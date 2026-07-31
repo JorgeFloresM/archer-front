@@ -1,535 +1,486 @@
-<!-- SideNavBar (Menú Lateral Unificado) -->
-<nav
-  class="w-[260px] h-screen fixed left-0 top-0 bg-primary border-r border-outline-variant flex flex-col py-6 z-50"
->
-  <div class="px-6 mb-8 flex items-center gap-3">
-    <div
-      class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center shrink-0"
-    >
-      <span class="material-symbols-outlined text-primary text-[24px]">local_shipping</span>
-    </div>
-    <div>
-      <h1 class="font-headline-md text-xl text-on-primary m-0 font-bold tracking-tight">
-        Archer Control
-      </h1>
-      <p
-        class="font-label-caps text-[10px] text-on-primary-container mt-0.5 opacity-80 uppercase tracking-wider"
-      >
-        Gestión Logística
-      </p>
-    </div>
-  </div>
-  <div class="flex-1 overflow-y-auto font-body-md text-sm">
-    <a
-      routerLink="/dashboard"
-      class="flex items-center gap-3 px-4 py-3 text-surface-variant hover:text-on-primary hover:bg-on-primary-fixed-variant/50 transition-all duration-200 cursor-pointer"
-    >
-      <span class="material-symbols-outlined text-[20px]">dashboard</span>
-      <span>Dashboard</span>
-    </a>
-
-    <a
-      routerLink="/nuevo-servicio"
-      class="flex items-center gap-3 px-4 py-3 text-surface-variant hover:text-on-primary hover:bg-on-primary-fixed-variant/50 transition-all duration-200 cursor-pointer"
-    >
-      <span class="material-symbols-outlined text-[20px]">settings_suggest</span>
-      <span>Servicios</span>
-    </a>
-
-    <a
-      routerLink="/clientes"
-      class="flex items-center gap-3 px-4 py-3 text-surface-variant hover:text-on-primary hover:bg-on-primary-fixed-variant/50 transition-all duration-200 cursor-pointer"
-    >
-      <span class="material-symbols-outlined text-[20px]">group</span>
-      <span>Clientes</span>
-    </a>
-
-    <!-- Active: Transportistas / Unidades -->
-    <a
-      routerLink="/transportistas"
-      class="flex items-center gap-3 px-4 py-3 border-l-2 border-secondary bg-on-primary-fixed-variant text-on-primary font-bold transition-all duration-200 cursor-pointer"
-    >
-      <span class="material-symbols-outlined text-[20px]">business_center</span>
-      <span>Transportistas / Unidades</span>
-    </a>
-
-    <a
-      routerLink="/asignacion"
-      class="flex items-center gap-3 px-4 py-3 text-surface-variant hover:text-on-primary hover:bg-on-primary-fixed-variant/50 transition-all duration-200"
-    >
-      <span class="material-symbols-outlined text-[20px]">assignment_ind</span>
-      <span>Asignación</span>
-    </a>
-
-    <a
-      href="#"
-      class="flex items-center gap-3 px-4 py-3 text-surface-variant hover:text-on-primary hover:bg-on-primary-fixed-variant/50 transition-all duration-200"
-    >
-      <span class="material-symbols-outlined text-[20px]">local_shipping</span>
-      <span>Seguimiento Operativo</span>
-    </a>
-
-    <a
-      href="#"
-      class="flex items-center gap-3 px-4 py-3 text-surface-variant hover:text-on-primary hover:bg-on-primary-fixed-variant/50 transition-all duration-200"
-    >
-      <span class="material-symbols-outlined text-[20px]">task_alt</span>
-      <span>Evidencias</span>
-    </a>
-
-    <a
-      href="#"
-      class="flex items-center gap-3 px-4 py-3 text-surface-variant hover:text-on-primary hover:bg-on-primary-fixed-variant/50 transition-all duration-200"
-    >
-      <span class="material-symbols-outlined text-[20px]">assessment</span>
-      <span>Reportes</span>
-    </a>
-
-    <a
-      href="#"
-      class="flex items-center gap-3 px-4 py-3 text-surface-variant hover:text-on-primary hover:bg-on-primary-fixed-variant/50 transition-all duration-200"
-    >
-      <span class="material-symbols-outlined text-[20px]">payments</span>
-      <span>Finanzas</span>
-    </a>
-  </div>
-  <!-- User Profile (Bottom) -->
-  <div class="mt-auto px-4 w-full">
-    <div
-      class="flex items-center gap-3 p-3 rounded-lg hover:bg-on-primary-fixed-variant/50 cursor-pointer transition-colors border border-on-primary-fixed-variant"
-    >
-      <img
-        alt="User Profile"
-        class="w-8 h-8 rounded-full object-cover shrink-0"
-        src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7MwM38XyGqbR6ACo0Qp1cSft-Zun6GJawU3b48AnS1Lzssyo6IxDoIDIYL5n7yoaArsu_Ibai4G8I8UTvIow4k9rRPrBUp8fKDaxhylykqWOKY-1MpsINCRNiac3Px6j_Cn4jKGE4_jIkkapPv_31q8-HvwrUkwNIrqw8oFTIH2fQ327x08r81AHjKyUlTdv7DpbLKctJAlv_1VW5b-E2dtw1HRpUSiJ2XTv1jIlwLBY5FCDvM6a05uBUbXO2vffmcE89x0Fw9L5T"
-      />
-      <div class="flex flex-col overflow-hidden">
-        <span class="font-body-sm text-xs text-on-primary truncate font-bold">Admin User</span>
-        <span
-          class="font-label-caps text-[9px] text-surface-variant truncate opacity-80 uppercase tracking-wider"
-          >Operaciones</span
-        >
-      </div>
-    </div>
-  </div>
-</nav>
-
-<!-- Main Content Area (Área Principal) -->
-<div class="ml-[260px] flex-1 flex flex-col h-screen relative w-full overflow-hidden bg-background">
-  <!-- TopAppBar (Barra Superior Unificada) -->
-  <header
-    class="h-16 flex-shrink-0 sticky top-0 z-40 bg-surface border-b border-outline-variant flex items-center justify-between px-6 w-full font-label-caps text-xs text-primary"
+<!-- Contenedor Base de la Aplicación (100% del ancho y alto) -->
+<div class="min-h-screen bg-surface-container w-full p-3 sm:p-5 flex flex-col font-sans">
+  <!-- La Gran Tarjeta Blanca que contiene TODO -->
+  <div
+    class="bg-surface w-full flex-1 rounded-3xl shadow-xl flex flex-col overflow-hidden relative"
   >
-    <div class="flex items-center gap-4">
-      <span class="font-title-sm text-lg font-semibold text-on-surface">Archer Control</span>
-      <div class="relative ml-4 md:ml-8 hidden sm:block">
-        <span
-          class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline"
-          >search</span
-        >
-        <!-- El buscador se adapta al contexto -->
-        <input
-          class="pl-10 pr-4 py-2 bg-surface-container rounded border border-outline-variant focus:border-secondary focus:ring-1 focus:ring-secondary focus:outline-none transition-colors w-48 md:w-64 text-on-surface font-body-sm text-sm"
-          placeholder="Buscar socio, operador o placa..."
-          type="text"
-        />
-      </div>
-    </div>
-
-    <div class="flex items-center gap-3">
-      <button
-        class="text-on-surface-variant hover:bg-surface-container-high transition-colors p-2 rounded-full cursor-pointer"
-      >
-        <span class="material-symbols-outlined">notifications</span>
-      </button>
-      <button
-        class="text-on-surface-variant hover:bg-surface-container-high transition-colors p-2 rounded-full cursor-pointer"
-      >
-        <span class="material-symbols-outlined">settings</span>
-      </button>
-      <div
-        class="w-8 h-8 rounded-full bg-primary-container overflow-hidden border border-outline-variant ml-1 md:ml-2 flex-shrink-0"
-      >
-        <img
-          alt="User Profile"
-          class="w-full h-full object-cover"
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7MwM38XyGqbR6ACo0Qp1cSft-Zun6GJawU3b48AnS1Lzssyo6IxDoIDIYL5n7yoaArsu_Ibai4G8I8UTvIow4k9rRPrBUp8fKDaxhylykqWOKY-1MpsINCRNiac3Px6j_Cn4jKGE4_jIkkapPv_31q8-HvwrUkwNIrqw8oFTIH2fQ327x08r81AHjKyUlTdv7DpbLKctJAlv_1VW5b-E2dtw1HRpUSiJ2XTv1jIlwLBY5FCDvM6a05uBUbXO2vffmcE89x0Fw9L5T"
-        />
-      </div>
-    </div>
-  </header>
-
-  <!-- Page Content -->
-  <main class="flex-1 p-6 md:p-8 overflow-y-auto bg-background">
-    <!-- El contenedor LIMITA el ancho al mismo tamaño estándar (1400px) -->
-    <div class="max-w-[1400px] mx-auto w-full relative">
-      <!-- Header de la sección -->
-      <div class="mb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
-        <div>
-          <h2 class="text-2xl font-semibold text-on-surface mb-1">
-            Catálogo de Transportistas y Unidades
-          </h2>
-          <p class="font-body-sm text-sm text-on-surface-variant">
-            Módulo 04: Registro de operadores, vehículos y validación de documentación.
+    <!-- TopBar (Header y Navegación) -->
+    <header
+      class="flex items-center justify-between px-6 py-5 border-b border-outline-variant/50 gap-4"
+    >
+      <!-- Logo y Título -->
+      <div class="flex items-center gap-3 shrink-0">
+        <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-md">
+          <span class="material-symbols-outlined text-on-primary font-bold">shield</span>
+        </div>
+        <div class="hidden sm:block">
+          <h1 class="font-bold text-on-surface text-xl leading-tight">Archer Control</h1>
+          <p class="text-on-surface-variant text-[11px] font-medium uppercase tracking-wider">
+            Command Center
           </p>
         </div>
-        <div class="flex items-center gap-3 w-full md:w-auto">
-          <!-- BINDING: Botón Socio -->
-          <button
-            (click)="ejecutarAccion('Abriendo modal: Nuevo Socio')"
-            class="bg-surface border border-outline-variant text-on-surface px-4 py-2.5 rounded-lg font-label-caps text-xs font-bold uppercase hover:bg-surface-container-low transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-sm w-full md:w-auto shrink-0"
-          >
-            <span class="material-symbols-outlined text-[18px]">domain_add</span> Socio
-          </button>
-          <!-- BINDING: Botón Unidad -->
-          <button
-            (click)="ejecutarAccion('Abriendo formulario: Nueva Unidad')"
-            class="bg-secondary text-on-secondary px-4 py-2.5 rounded-lg font-label-caps text-xs font-bold uppercase hover:bg-opacity-90 transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-sm w-full md:w-auto shrink-0"
-          >
-            <span class="material-symbols-outlined text-[18px]">add</span> Unidad
-          </button>
-        </div>
       </div>
 
-      <!-- Main Container -->
-      <div class="glass-card rounded-xl overflow-hidden mb-8 flex flex-col">
-        <!-- Tabs de Navegación Interna (CON LÓGICA) -->
-        <div class="flex border-b border-outline-variant bg-surface-container-low/50">
-          <button
-            (click)="activeTab = 'unidades'"
-            class="flex-1 md:flex-none px-6 py-4 flex items-center justify-center gap-2 font-label-caps text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer border-b-2"
-            [ngClass]="
-              activeTab === 'unidades'
-                ? 'border-secondary text-secondary bg-surface-container-lowest'
-                : 'border-transparent text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest'
-            "
-          >
-            <span class="material-symbols-outlined text-[18px]">local_shipping</span> Unidades
-          </button>
-
-          <button
-            (click)="activeTab = 'operadores'"
-            class="flex-1 md:flex-none px-6 py-4 flex items-center justify-center gap-2 font-label-caps text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer border-b-2"
-            [ngClass]="
-              activeTab === 'operadores'
-                ? 'border-secondary text-secondary bg-surface-container-lowest'
-                : 'border-transparent text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest'
-            "
-          >
-            <span class="material-symbols-outlined text-[18px]">badge</span> Operadores
-          </button>
-
-          <button
-            (click)="activeTab = 'socios'"
-            class="flex-1 md:flex-none px-6 py-4 flex items-center justify-center gap-2 font-label-caps text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer border-b-2"
-            [ngClass]="
-              activeTab === 'socios'
-                ? 'border-secondary text-secondary bg-surface-container-lowest'
-                : 'border-transparent text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest'
-            "
-          >
-            <span class="material-symbols-outlined text-[18px]">storefront</span> Socios
-          </button>
-        </div>
-
-        <!-- Action Toolbar -->
-        <div
-          class="p-4 border-b border-outline-variant bg-surface-container-lowest flex justify-between items-center gap-4 flex-wrap"
-        >
-          <div class="relative w-full md:max-w-md">
-            <span
-              class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline"
-              >search</span
-            >
-            <!-- BINDING: Buscador conectado a ngModel -->
-            <input
-              type="text"
-              [(ngModel)]="searchTerm"
-              placeholder="Filtrar registro actual..."
-              class="w-full pl-10 pr-4 py-2 bg-surface rounded-lg border border-outline-variant focus:border-secondary focus:ring-1 focus:ring-secondary focus:outline-none transition-colors text-sm text-on-surface"
-            />
-          </div>
-
-          <!-- BINDING: Botón Filtros -->
-          <button
-            (click)="ejecutarAccion('Abriendo panel de filtros avanzados')"
-            class="text-on-surface-variant hover:bg-surface-container-low transition-colors p-2 px-4 rounded-lg border border-outline-variant bg-surface flex items-center gap-2 text-sm font-medium cursor-pointer shadow-sm"
-          >
-            <span class="material-symbols-outlined text-[18px]">filter_list</span> Filtros
-          </button>
-        </div>
-
-        <!-- TABLA 1: UNIDADES (*ngIf) -->
-        <div
-          *ngIf="activeTab === 'unidades'"
-          class="overflow-x-auto w-full bg-surface-container-lowest animate-[fadeIn_0.3s_ease-out]"
-        >
-          <table class="w-full text-left border-collapse min-w-[800px]">
-            <thead>
-              <tr
-                class="bg-surface-container-low/50 border-b border-outline-variant font-label-caps text-xs text-on-surface-variant uppercase tracking-wider"
-              >
-                <th class="p-4 font-bold whitespace-nowrap">ID Unidad</th>
-                <th class="p-4 font-bold">Detalle / Socio</th>
-                <th class="p-4 font-bold">Operador Asignado</th>
-                <th class="p-4 font-bold">Documentación</th>
-                <th class="p-4 font-bold text-right">Acciones</th>
-              </tr>
-            </thead>
-            <tbody class="font-body-sm text-sm text-on-surface">
-              <!-- BINDING: Usamos filteredUnidades -->
-              <tr
-                *ngFor="let u of filteredUnidades"
-                class="border-b border-outline-variant hover:bg-surface-container-low transition-colors group"
-              >
-                <td class="p-4 font-data-mono font-medium text-secondary whitespace-nowrap">
-                  {{ u.id }}
-                </td>
-                <td class="p-4">
-                  <div class="flex flex-col">
-                    <span class="font-semibold text-on-surface">{{ u.tipo }}</span>
-                    <span class="text-outline text-xs mt-0.5"
-                      >Socio:
-                      <span class="font-medium text-on-surface-variant">{{ u.socio }}</span></span
-                    >
-                    <span class="text-outline text-xs font-data-mono mt-0.5"
-                      >Placas: {{ u.placas }}</span
-                    >
-                  </div>
-                </td>
-                <td class="p-4">
-                  <div class="flex items-center gap-2">
-                    <div
-                      class="w-6 h-6 rounded-full bg-surface-container-highest flex items-center justify-center text-[10px] font-bold text-on-surface-variant"
-                    >
-                      {{ u.operador.charAt(0) }}
-                    </div>
-                    <span class="font-medium">{{ u.operador }}</span>
-                  </div>
-                </td>
-                <td class="p-4 whitespace-nowrap">
-                  <!-- Indicadores visuales condicionales -->
-                  <span
-                    class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg font-label-caps text-[10px] uppercase font-bold tracking-wider border"
-                    [ngClass]="{
-                      'bg-primary-fixed text-on-primary-fixed border-transparent':
-                        u.docEstatus === 'Al corriente',
-                      'bg-error-container/30 text-error border-error-container':
-                        u.docEstatus === 'Incompleta',
-                      'bg-surface-variant text-on-surface border-outline-variant':
-                        u.docEstatus === 'Por vencer',
-                    }"
-                  >
-                    <span
-                      class="w-1.5 h-1.5 rounded-full"
-                      [ngClass]="{
-                        'bg-secondary': u.docEstatus === 'Al corriente',
-                        'bg-error': u.docEstatus === 'Incompleta',
-                        'bg-outline': u.docEstatus === 'Por vencer',
-                      }"
-                    ></span>
-                    {{ u.docEstatus }}
-                  </span>
-                </td>
-                <td class="p-4 text-right whitespace-nowrap space-x-2">
-                  <button
-                    (click)="ejecutarAccion('Gestionando doc. de unidad ' + u.id)"
-                    class="text-on-surface-variant hover:text-secondary p-1 rounded transition-colors cursor-pointer"
-                    title="Gestionar Documentos"
-                  >
-                    <span class="material-symbols-outlined text-[18px]">folder_shared</span>
-                  </button>
-                  <button
-                    (click)="ejecutarAccion('Editando unidad ' + u.id)"
-                    class="text-on-surface-variant hover:text-secondary p-1 rounded transition-colors cursor-pointer"
-                    title="Editar Unidad"
-                  >
-                    <span class="material-symbols-outlined text-[18px]">edit</span>
-                  </button>
-                </td>
-              </tr>
-              <!-- Mensaje si no hay resultados -->
-              <tr *ngIf="filteredUnidades.length === 0">
-                <td colspan="5" class="p-8 text-center text-on-surface-variant font-body-sm">
-                  No se encontraron unidades que coincidan con la búsqueda.
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <!-- TABLA 2: OPERADORES (*ngIf) -->
-        <div
-          *ngIf="activeTab === 'operadores'"
-          class="overflow-x-auto w-full bg-surface-container-lowest animate-[fadeIn_0.3s_ease-out]"
-        >
-          <table class="w-full text-left border-collapse min-w-[800px]">
-            <thead>
-              <tr
-                class="bg-surface-container-low/50 border-b border-outline-variant font-label-caps text-xs text-on-surface-variant uppercase tracking-wider"
-              >
-                <th class="p-4 font-bold whitespace-nowrap">ID Operador</th>
-                <th class="p-4 font-bold">Nombre Completo</th>
-                <th class="p-4 font-bold">Licencia</th>
-                <th class="p-4 font-bold">Estatus</th>
-                <th class="p-4 font-bold text-right">Acciones</th>
-              </tr>
-            </thead>
-            <tbody class="font-body-sm text-sm text-on-surface">
-              <!-- BINDING: Usamos filteredOperadores -->
-              <tr
-                *ngFor="let o of filteredOperadores"
-                class="border-b border-outline-variant hover:bg-surface-container-low transition-colors group"
-              >
-                <td class="p-4 font-data-mono font-medium text-secondary whitespace-nowrap">
-                  {{ o.id }}
-                </td>
-                <td class="p-4 font-semibold text-on-surface">{{ o.nombre }}</td>
-                <td class="p-4">
-                  <div class="flex flex-col">
-                    <span class="font-data-mono text-xs">{{ o.licencia }}</span>
-                    <span class="text-outline text-[10px] mt-0.5">Vence: {{ o.vigencia }}</span>
-                  </div>
-                </td>
-                <td class="p-4 whitespace-nowrap">
-                  <span
-                    class="inline-flex items-center px-2 py-1 rounded font-label-caps text-[10px] uppercase font-bold tracking-wider"
-                    [ngClass]="{
-                      'bg-primary-fixed text-on-primary-fixed': o.estatus === 'Activo',
-                      'bg-surface-variant text-on-surface-variant': o.estatus === 'Por Vencer',
-                    }"
-                  >
-                    {{ o.estatus }}
-                  </span>
-                </td>
-                <td class="p-4 text-right whitespace-nowrap space-x-2">
-                  <button
-                    (click)="ejecutarAccion('Ver expediente de ' + o.nombre)"
-                    class="text-on-surface-variant hover:text-secondary p-1 rounded transition-colors cursor-pointer"
-                    title="Ver Expediente"
-                  >
-                    <span class="material-symbols-outlined text-[18px]">badge</span>
-                  </button>
-                  <button
-                    (click)="ejecutarAccion('Editando operador ' + o.id)"
-                    class="text-on-surface-variant hover:text-secondary p-1 rounded transition-colors cursor-pointer"
-                    title="Editar Operador"
-                  >
-                    <span class="material-symbols-outlined text-[18px]">edit</span>
-                  </button>
-                </td>
-              </tr>
-              <!-- Mensaje si no hay resultados -->
-              <tr *ngIf="filteredOperadores.length === 0">
-                <td colspan="5" class="p-8 text-center text-on-surface-variant font-body-sm">
-                  No se encontraron operadores que coincidan con la búsqueda.
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <!-- TABLA 3: SOCIOS (*ngIf) -->
-        <div
-          *ngIf="activeTab === 'socios'"
-          class="overflow-x-auto w-full bg-surface-container-lowest animate-[fadeIn_0.3s_ease-out]"
-        >
-          <table class="w-full text-left border-collapse min-w-[800px]">
-            <thead>
-              <tr
-                class="bg-surface-container-low/50 border-b border-outline-variant font-label-caps text-xs text-on-surface-variant uppercase tracking-wider"
-              >
-                <th class="p-4 font-bold whitespace-nowrap">ID Socio</th>
-                <th class="p-4 font-bold">Razón Social</th>
-                <th class="p-4 font-bold">RFC</th>
-                <th class="p-4 font-bold text-center">Unidades Asignadas</th>
-                <th class="p-4 font-bold">Estatus</th>
-                <th class="p-4 font-bold text-right">Acciones</th>
-              </tr>
-            </thead>
-            <tbody class="font-body-sm text-sm text-on-surface">
-              <!-- BINDING: Usamos filteredSocios -->
-              <tr
-                *ngFor="let s of filteredSocios"
-                class="border-b border-outline-variant hover:bg-surface-container-low transition-colors group"
-              >
-                <td class="p-4 font-data-mono font-medium text-secondary whitespace-nowrap">
-                  {{ s.id }}
-                </td>
-                <td class="p-4 font-semibold text-on-surface">{{ s.empresa }}</td>
-                <td class="p-4 font-data-mono text-xs text-outline">{{ s.rfc }}</td>
-                <td class="p-4 text-center font-bold">{{ s.unidades }}</td>
-                <td class="p-4 whitespace-nowrap">
-                  <span
-                    class="inline-flex items-center px-2 py-1 rounded font-label-caps text-[10px] uppercase font-bold tracking-wider"
-                    [ngClass]="{
-                      'bg-primary-fixed text-on-primary-fixed': s.estatus === 'Activo',
-                      'bg-error-container text-error': s.estatus === 'Inactivo',
-                    }"
-                  >
-                    {{ s.estatus }}
-                  </span>
-                </td>
-                <td class="p-4 text-right whitespace-nowrap space-x-2">
-                  <button
-                    (click)="ejecutarAccion('Ver contrato de ' + s.empresa)"
-                    class="text-on-surface-variant hover:text-secondary p-1 rounded transition-colors cursor-pointer"
-                    title="Ver Contratos"
-                  >
-                    <span class="material-symbols-outlined text-[18px]">contract</span>
-                  </button>
-                  <button
-                    (click)="ejecutarAccion('Editando socio ' + s.id)"
-                    class="text-on-surface-variant hover:text-secondary p-1 rounded transition-colors cursor-pointer"
-                    title="Editar Socio"
-                  >
-                    <span class="material-symbols-outlined text-[18px]">edit</span>
-                  </button>
-                </td>
-              </tr>
-              <!-- Mensaje si no hay resultados -->
-              <tr *ngIf="filteredSocios.length === 0">
-                <td colspan="6" class="p-8 text-center text-on-surface-variant font-body-sm">
-                  No se encontraron socios que coincidan con la búsqueda.
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <!-- Paginación Footer -->
-        <div
-          class="p-4 border-t border-outline-variant bg-surface-container-lowest flex items-center justify-between text-sm text-on-surface-variant"
-        >
-          <span>Mostrando página 1</span>
-          <div class="flex items-center gap-2">
-            <button
-              class="p-1 rounded hover:bg-surface-container transition-colors disabled:opacity-50 cursor-pointer"
-              disabled
-            >
-              <span class="material-symbols-outlined text-[20px]">chevron_left</span>
-            </button>
-            <button class="p-1 rounded hover:bg-surface-container transition-colors cursor-pointer">
-              <span class="material-symbols-outlined text-[20px]">chevron_right</span>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Toast Flotante (Notificación) -->
-      <div
-        *ngIf="mensajeActivo"
-        class="fixed bottom-6 right-6 bg-surface-container-highest border border-outline-variant shadow-lg text-on-surface p-4 rounded-xl flex items-center gap-3 z-50 animate-[bounce_0.2s_ease-in-out]"
+      <!-- Navegación Central (La "Píldora" oscura con TODAS las opciones y scroll invisible) -->
+      <nav
+        class="hidden lg:flex items-center bg-primary rounded-full p-1.5 shadow-md overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] max-w-[65vw]"
       >
-        <span class="material-symbols-outlined text-secondary text-[24px]">info</span>
-        <span class="font-body-sm text-sm font-medium">{{ mensajeActivo }}</span>
-        <button
-          (click)="mensajeActivo = null"
-          class="ml-2 text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer p-1"
+        <a
+          routerLink="/dashboard"
+          class="px-4 py-2 rounded-full text-on-primary hover:bg-white/10 font-medium text-sm transition-all cursor-pointer whitespace-nowrap"
         >
-          <span class="material-symbols-outlined text-[18px]">close</span>
+          Overview
+        </a>
+        <a
+          routerLink="/nuevo-servicio"
+          class="px-4 py-2 rounded-full text-on-primary hover:bg-white/10 font-medium text-sm transition-all cursor-pointer whitespace-nowrap"
+        >
+          Servicios
+        </a>
+        <a
+          routerLink="/clientes"
+          class="px-4 py-2 rounded-full text-on-primary hover:bg-white/10 font-medium text-sm transition-all cursor-pointer whitespace-nowrap"
+        >
+          Clientes
+        </a>
+        <!-- ACTIVE: Unidades -->
+        <a
+          routerLink="/transportistas"
+          class="px-4 py-2 rounded-full bg-secondary text-on-secondary font-semibold text-sm transition-all shadow-sm cursor-pointer whitespace-nowrap"
+        >
+          Unidades
+        </a>
+        <a
+          routerLink="/asignacion"
+          class="px-4 py-2 rounded-full text-on-primary hover:bg-white/10 font-medium text-sm transition-all cursor-pointer whitespace-nowrap"
+        >
+          Asignación
+        </a>
+        <a
+          routerLink="/seguimiento"
+          class="px-4 py-2 rounded-full text-on-primary hover:bg-white/10 font-medium text-sm transition-all cursor-pointer whitespace-nowrap"
+        >
+          Seguimiento
+        </a>
+        <a
+          routerLink="/evidencias"
+          class="px-4 py-2 rounded-full text-on-primary hover:bg-white/10 font-medium text-sm transition-all cursor-pointer whitespace-nowrap"
+        >
+          Evidencias
+        </a>
+        <a
+          routerLink="/reportes"
+          class="px-4 py-2 rounded-full text-on-primary hover:bg-white/10 font-medium text-sm transition-all cursor-pointer whitespace-nowrap"
+        >
+          Reportes
+        </a>
+        <a
+          routerLink="/finanzas"
+          class="px-4 py-2 rounded-full text-on-primary hover:bg-white/10 font-medium text-sm transition-all cursor-pointer whitespace-nowrap"
+        >
+          Finanzas
+        </a>
+      </nav>
+
+      <!-- Utilidades Derecha (Buscador, Notificaciones, Perfil) -->
+      <div class="flex items-center gap-3 shrink-0">
+        <button class="text-on-surface hover:text-secondary transition-colors cursor-pointer p-1">
+          <span class="material-symbols-outlined">search</span>
         </button>
+        <button class="text-on-surface hover:text-secondary transition-colors cursor-pointer p-1">
+          <span class="material-symbols-outlined">notifications</span>
+        </button>
+        <button class="text-on-surface hover:text-secondary transition-colors cursor-pointer p-1">
+          <span class="material-symbols-outlined">settings</span>
+        </button>
+        <div
+          class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden border-2 border-surface ml-1 shadow-sm cursor-pointer"
+        >
+          <img
+            alt="User Profile"
+            class="w-full h-full object-cover"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7MwM38XyGqbR6ACo0Qp1cSft-Zun6GJawU3b48AnS1Lzssyo6IxDoIDIYL5n7yoaArsu_Ibai4G8I8UTvIow4k9rRPrBUp8fKDaxhylykqWOKY-1MpsINCRNiac3Px6j_Cn4jKGE4_jIkkapPv_31q8-HvwrUkwNIrqw8oFTIH2fQ327x08r81AHjKyUlTdv7DpbLKctJAlv_1VW5b-E2dtw1HRpUSiJ2XTv1jIlwLBY5FCDvM6a05uBUbXO2vffmcE89x0Fw9L5T"
+          />
+        </div>
       </div>
-    </div>
-  </main>
+    </header>
+
+    <!-- Main Content Area (Fluido) -->
+    <main class="flex-1 p-6 lg:p-8 overflow-y-auto w-full">
+      <!-- Contenedor centrado para tablas (max-w-6xl es ideal para directorios) -->
+      <div class="w-full max-w-6xl mx-auto">
+        <!-- Header de la sección -->
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+          <div class="flex items-center gap-4">
+            <div>
+              <h2 class="text-2xl md:text-3xl font-bold text-on-surface mb-1">
+                Catálogo de Transportistas y Unidades
+              </h2>
+              <p class="font-body-sm text-sm text-on-surface-variant">
+                Módulo 04: Registro de operadores, vehículos y validación de documentación.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-center gap-3 w-full md:w-auto">
+            <!-- BINDING: Botón Socio -->
+            <button
+              (click)="ejecutarAccion('Abriendo modal: Nuevo Socio')"
+              class="bg-surface border border-outline-variant text-on-surface px-4 py-2.5 rounded-full font-semibold text-sm hover:bg-surface-container-low transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-sm w-full md:w-auto shrink-0"
+            >
+              <span class="material-symbols-outlined text-[18px]">domain_add</span> Socio
+            </button>
+            <!-- BINDING: Botón Unidad -->
+            <button
+              (click)="ejecutarAccion('Abriendo formulario: Nueva Unidad')"
+              class="bg-secondary text-on-secondary px-5 py-2.5 rounded-full font-semibold text-sm flex items-center justify-center gap-2 hover:bg-opacity-90 transition-all shadow-md cursor-pointer w-full md:w-auto shrink-0"
+            >
+              <span class="material-symbols-outlined text-[18px]">add</span> Unidad
+            </button>
+          </div>
+        </div>
+
+        <!-- Main Container -->
+        <div class="glass-card rounded-xl overflow-hidden mb-8 flex flex-col">
+          <!-- Tabs de Navegación Interna (CON LÓGICA) -->
+          <div class="flex border-b border-outline-variant bg-surface-container-low/50">
+            <button
+              (click)="activeTab = 'unidades'"
+              class="flex-1 md:flex-none px-6 py-4 flex items-center justify-center gap-2 font-label-caps text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer border-b-2"
+              [ngClass]="
+                activeTab === 'unidades'
+                  ? 'border-secondary text-secondary bg-surface-container-lowest'
+                  : 'border-transparent text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest'
+              "
+            >
+              <span class="material-symbols-outlined text-[18px]">local_shipping</span> Unidades
+            </button>
+
+            <button
+              (click)="activeTab = 'operadores'"
+              class="flex-1 md:flex-none px-6 py-4 flex items-center justify-center gap-2 font-label-caps text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer border-b-2"
+              [ngClass]="
+                activeTab === 'operadores'
+                  ? 'border-secondary text-secondary bg-surface-container-lowest'
+                  : 'border-transparent text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest'
+              "
+            >
+              <span class="material-symbols-outlined text-[18px]">badge</span> Operadores
+            </button>
+
+            <button
+              (click)="activeTab = 'socios'"
+              class="flex-1 md:flex-none px-6 py-4 flex items-center justify-center gap-2 font-label-caps text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer border-b-2"
+              [ngClass]="
+                activeTab === 'socios'
+                  ? 'border-secondary text-secondary bg-surface-container-lowest'
+                  : 'border-transparent text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest'
+              "
+            >
+              <span class="material-symbols-outlined text-[18px]">storefront</span> Socios
+            </button>
+          </div>
+
+          <!-- Action Toolbar -->
+          <div
+            class="p-4 border-b border-outline-variant bg-surface-container-lowest flex justify-between items-center gap-4 flex-wrap"
+          >
+            <div class="relative w-full md:max-w-md">
+              <span
+                class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline"
+                >search</span
+              >
+              <!-- BINDING: Buscador conectado a ngModel -->
+              <input
+                type="text"
+                [(ngModel)]="searchTerm"
+                placeholder="Filtrar registro actual..."
+                class="w-full pl-10 pr-4 py-2 bg-surface rounded-lg border border-outline-variant focus:border-secondary focus:ring-1 focus:ring-secondary focus:outline-none transition-colors text-sm text-on-surface"
+              />
+            </div>
+
+            <!-- BINDING: Botón Filtros -->
+            <button
+              (click)="ejecutarAccion('Abriendo panel de filtros avanzados')"
+              class="text-on-surface-variant hover:bg-surface transition-colors p-2 px-4 rounded-lg border border-outline-variant bg-surface-container-lowest flex items-center gap-2 text-sm font-medium cursor-pointer shadow-sm"
+            >
+              <span class="material-symbols-outlined text-[18px]">filter_list</span> Filtros
+            </button>
+          </div>
+
+          <!-- TABLA 1: UNIDADES (*ngIf) -->
+          <div
+            *ngIf="activeTab === 'unidades'"
+            class="overflow-x-auto w-full bg-surface-container-lowest animate-[fadeIn_0.3s_ease-out]"
+          >
+            <table class="w-full text-left border-collapse min-w-[800px]">
+              <thead>
+                <tr
+                  class="bg-surface-container-low/50 border-b border-outline-variant font-label-caps text-xs text-on-surface-variant uppercase tracking-wider"
+                >
+                  <th class="p-4 font-bold whitespace-nowrap">ID Unidad</th>
+                  <th class="p-4 font-bold">Detalle / Socio</th>
+                  <th class="p-4 font-bold">Operador Asignado</th>
+                  <th class="p-4 font-bold">Documentación</th>
+                  <th class="p-4 font-bold text-right">Acciones</th>
+                </tr>
+              </thead>
+              <tbody class="font-body-sm text-sm text-on-surface">
+                <!-- BINDING: Usamos filteredUnidades -->
+                <tr
+                  *ngFor="let u of filteredUnidades"
+                  class="border-b border-outline-variant hover:bg-surface-container-low transition-colors group"
+                >
+                  <td class="p-4 font-data-mono font-medium text-secondary whitespace-nowrap">
+                    {{ u.id }}
+                  </td>
+                  <td class="p-4">
+                    <div class="flex flex-col">
+                      <span class="font-semibold text-on-surface">{{ u.tipo }}</span>
+                      <span class="text-outline text-xs mt-0.5"
+                        >Socio:
+                        <span class="font-medium text-on-surface-variant">{{ u.socio }}</span></span
+                      >
+                      <span class="text-outline text-xs font-data-mono mt-0.5"
+                        >Placas: {{ u.placas }}</span
+                      >
+                    </div>
+                  </td>
+                  <td class="p-4">
+                    <div class="flex items-center gap-2">
+                      <div
+                        class="w-6 h-6 rounded-full bg-surface-container-highest flex items-center justify-center text-[10px] font-bold text-on-surface-variant"
+                      >
+                        {{ u.operador.charAt(0) }}
+                      </div>
+                      <span class="font-medium">{{ u.operador }}</span>
+                    </div>
+                  </td>
+                  <td class="p-4 whitespace-nowrap">
+                    <!-- Indicadores visuales condicionales -->
+                    <span
+                      class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg font-label-caps text-[10px] uppercase font-bold tracking-wider border"
+                      [ngClass]="{
+                        'bg-primary-fixed text-on-primary-fixed border-transparent':
+                          u.docEstatus === 'Al corriente',
+                        'bg-error-container/30 text-error border-error-container':
+                          u.docEstatus === 'Incompleta',
+                        'bg-surface-variant text-on-surface border-outline-variant':
+                          u.docEstatus === 'Por vencer',
+                      }"
+                    >
+                      <span
+                        class="w-1.5 h-1.5 rounded-full"
+                        [ngClass]="{
+                          'bg-secondary': u.docEstatus === 'Al corriente',
+                          'bg-error': u.docEstatus === 'Incompleta',
+                          'bg-outline': u.docEstatus === 'Por vencer',
+                        }"
+                      ></span>
+                      {{ u.docEstatus }}
+                    </span>
+                  </td>
+                  <td class="p-4 text-right whitespace-nowrap space-x-2">
+                    <button
+                      (click)="ejecutarAccion('Gestionando doc. de unidad ' + u.id)"
+                      class="text-on-surface-variant hover:text-secondary p-1 rounded transition-colors cursor-pointer"
+                      title="Gestionar Documentos"
+                    >
+                      <span class="material-symbols-outlined text-[18px]">folder_shared</span>
+                    </button>
+                    <button
+                      (click)="ejecutarAccion('Editando unidad ' + u.id)"
+                      class="text-on-surface-variant hover:text-secondary p-1 rounded transition-colors cursor-pointer"
+                      title="Editar Unidad"
+                    >
+                      <span class="material-symbols-outlined text-[18px]">edit</span>
+                    </button>
+                  </td>
+                </tr>
+                <!-- Mensaje si no hay resultados -->
+                <tr *ngIf="filteredUnidades.length === 0">
+                  <td colspan="5" class="p-8 text-center text-on-surface-variant font-body-sm">
+                    No se encontraron unidades que coincidan con la búsqueda.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- TABLA 2: OPERADORES (*ngIf) -->
+          <div
+            *ngIf="activeTab === 'operadores'"
+            class="overflow-x-auto w-full bg-surface-container-lowest animate-[fadeIn_0.3s_ease-out]"
+          >
+            <table class="w-full text-left border-collapse min-w-[800px]">
+              <thead>
+                <tr
+                  class="bg-surface-container-low/50 border-b border-outline-variant font-label-caps text-xs text-on-surface-variant uppercase tracking-wider"
+                >
+                  <th class="p-4 font-bold whitespace-nowrap">ID Operador</th>
+                  <th class="p-4 font-bold">Nombre Completo</th>
+                  <th class="p-4 font-bold">Licencia</th>
+                  <th class="p-4 font-bold">Estatus</th>
+                  <th class="p-4 font-bold text-right">Acciones</th>
+                </tr>
+              </thead>
+              <tbody class="font-body-sm text-sm text-on-surface">
+                <!-- BINDING: Usamos filteredOperadores -->
+                <tr
+                  *ngFor="let o of filteredOperadores"
+                  class="border-b border-outline-variant hover:bg-surface-container-low transition-colors group"
+                >
+                  <td class="p-4 font-data-mono font-medium text-secondary whitespace-nowrap">
+                    {{ o.id }}
+                  </td>
+                  <td class="p-4 font-semibold text-on-surface">{{ o.nombre }}</td>
+                  <td class="p-4">
+                    <div class="flex flex-col">
+                      <span class="font-data-mono text-xs">{{ o.licencia }}</span>
+                      <span class="text-outline text-[10px] mt-0.5">Vence: {{ o.vigencia }}</span>
+                    </div>
+                  </td>
+                  <td class="p-4 whitespace-nowrap">
+                    <span
+                      class="inline-flex items-center px-2 py-1 rounded font-label-caps text-[10px] uppercase font-bold tracking-wider"
+                      [ngClass]="{
+                        'bg-primary-fixed text-on-primary-fixed': o.estatus === 'Activo',
+                        'bg-surface-variant text-on-surface-variant': o.estatus === 'Por Vencer',
+                      }"
+                    >
+                      {{ o.estatus }}
+                    </span>
+                  </td>
+                  <td class="p-4 text-right whitespace-nowrap space-x-2">
+                    <button
+                      (click)="ejecutarAccion('Ver expediente de ' + o.nombre)"
+                      class="text-on-surface-variant hover:text-secondary p-1 rounded transition-colors cursor-pointer"
+                      title="Ver Expediente"
+                    >
+                      <span class="material-symbols-outlined text-[18px]">badge</span>
+                    </button>
+                    <button
+                      (click)="ejecutarAccion('Editando operador ' + o.id)"
+                      class="text-on-surface-variant hover:text-secondary p-1 rounded transition-colors cursor-pointer"
+                      title="Editar Operador"
+                    >
+                      <span class="material-symbols-outlined text-[18px]">edit</span>
+                    </button>
+                  </td>
+                </tr>
+                <!-- Mensaje si no hay resultados -->
+                <tr *ngIf="filteredOperadores.length === 0">
+                  <td colspan="5" class="p-8 text-center text-on-surface-variant font-body-sm">
+                    No se encontraron operadores que coincidan con la búsqueda.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- TABLA 3: SOCIOS (*ngIf) -->
+          <div
+            *ngIf="activeTab === 'socios'"
+            class="overflow-x-auto w-full bg-surface-container-lowest animate-[fadeIn_0.3s_ease-out]"
+          >
+            <table class="w-full text-left border-collapse min-w-[800px]">
+              <thead>
+                <tr
+                  class="bg-surface-container-low/50 border-b border-outline-variant font-label-caps text-xs text-on-surface-variant uppercase tracking-wider"
+                >
+                  <th class="p-4 font-bold whitespace-nowrap">ID Socio</th>
+                  <th class="p-4 font-bold">Razón Social</th>
+                  <th class="p-4 font-bold">RFC</th>
+                  <th class="p-4 font-bold text-center">Unidades Asignadas</th>
+                  <th class="p-4 font-bold">Estatus</th>
+                  <th class="p-4 font-bold text-right">Acciones</th>
+                </tr>
+              </thead>
+              <tbody class="font-body-sm text-sm text-on-surface">
+                <!-- BINDING: Usamos filteredSocios -->
+                <tr
+                  *ngFor="let s of filteredSocios"
+                  class="border-b border-outline-variant hover:bg-surface-container-low transition-colors group"
+                >
+                  <td class="p-4 font-data-mono font-medium text-secondary whitespace-nowrap">
+                    {{ s.id }}
+                  </td>
+                  <td class="p-4 font-semibold text-on-surface">{{ s.empresa }}</td>
+                  <td class="p-4 font-data-mono text-xs text-outline">{{ s.rfc }}</td>
+                  <td class="p-4 text-center font-bold">{{ s.unidades }}</td>
+                  <td class="p-4 whitespace-nowrap">
+                    <span
+                      class="inline-flex items-center px-2 py-1 rounded font-label-caps text-[10px] uppercase font-bold tracking-wider"
+                      [ngClass]="{
+                        'bg-primary-fixed text-on-primary-fixed': s.estatus === 'Activo',
+                        'bg-error-container text-error': s.estatus === 'Inactivo',
+                      }"
+                    >
+                      {{ s.estatus }}
+                    </span>
+                  </td>
+                  <td class="p-4 text-right whitespace-nowrap space-x-2">
+                    <button
+                      (click)="ejecutarAccion('Ver contrato de ' + s.empresa)"
+                      class="text-on-surface-variant hover:text-secondary p-1 rounded transition-colors cursor-pointer"
+                      title="Ver Contratos"
+                    >
+                      <span class="material-symbols-outlined text-[18px]">contract</span>
+                    </button>
+                    <button
+                      (click)="ejecutarAccion('Editando socio ' + s.id)"
+                      class="text-on-surface-variant hover:text-secondary p-1 rounded transition-colors cursor-pointer"
+                      title="Editar Socio"
+                    >
+                      <span class="material-symbols-outlined text-[18px]">edit</span>
+                    </button>
+                  </td>
+                </tr>
+                <!-- Mensaje si no hay resultados -->
+                <tr *ngIf="filteredSocios.length === 0">
+                  <td colspan="6" class="p-8 text-center text-on-surface-variant font-body-sm">
+                    No se encontraron socios que coincidan con la búsqueda.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Paginación Footer -->
+          <div
+            class="p-4 border-t border-outline-variant bg-surface-container-lowest flex items-center justify-between text-sm text-on-surface-variant"
+          >
+            <span>Mostrando página 1</span>
+            <div class="flex items-center gap-2">
+              <button
+                class="p-1 rounded hover:bg-surface-container transition-colors disabled:opacity-50 cursor-pointer"
+                disabled
+              >
+                <span class="material-symbols-outlined text-[20px]">chevron_left</span>
+              </button>
+              <button
+                class="p-1 rounded hover:bg-surface-container transition-colors cursor-pointer"
+              >
+                <span class="material-symbols-outlined text-[20px]">chevron_right</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Toast Flotante (Notificación) -->
+        <div
+          *ngIf="mensajeActivo"
+          class="fixed bottom-6 right-6 bg-surface-container-highest border border-outline-variant shadow-lg text-on-surface p-4 rounded-xl flex items-center gap-3 z-50 animate-[bounce_0.2s_ease-in-out]"
+        >
+          <span class="material-symbols-outlined text-secondary text-[24px]">info</span>
+          <span class="font-body-sm text-sm font-medium">{{ mensajeActivo }}</span>
+          <button
+            (click)="mensajeActivo = null"
+            class="ml-2 text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer p-1"
+          >
+            <span class="material-symbols-outlined text-[18px]">close</span>
+          </button>
+        </div>
+      </div>
+    </main>
+  </div>
 </div>
